@@ -1,8 +1,7 @@
-import WTag from './components/tag/index'
-
-const components = [
-  WTag
-]
+/**
+ * 发布用
+ */
+import components from './components'
 
 const install = (Vue) => {
   if (install.installed) return
@@ -15,7 +14,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 module.exports = {
   install,
-  WTag
+  ...components
 }
 
 module.exports.default = module.exports
