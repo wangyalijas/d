@@ -11,7 +11,10 @@
   export default{
     name: 'WTag',
     props: {
-      closable: Boolean,
+      closable: {
+        type: Boolean,
+        default: false
+      },
       color: {
         type: String,
         default: 'primary'
@@ -30,3 +33,20 @@
     }
   }
 </script>
+<style lang="scss">
+.w__tag {
+    display: inline-block;
+    padding: 1px 8px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+    outline: 0;
+    color: #3f536e;
+    border-color: #dfdfdf;
+    background-color: #f7f7f7;
+}
+</style>

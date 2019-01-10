@@ -1,4 +1,4 @@
-import WTag from './components/tag/index'
+import WTag from './components/tag'
 
 const components = [
   WTag
@@ -13,9 +13,7 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 
-module.exports = {
+export default {
   install,
   WTag
 }
-
-module.exports.default = module.exports
