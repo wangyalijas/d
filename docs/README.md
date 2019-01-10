@@ -12,5 +12,5 @@ features:
   details: interesting
 - title: 整体设计
   details: integrated
-footer: MIT Licensed | Copyright © 2018-present Evan You
+footer: Copyright © 2019 Winning Health. All Rights Reserved. Powered By UED.
 ---
