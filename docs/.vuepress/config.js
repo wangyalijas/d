@@ -37,34 +37,77 @@ module.exports = {
                   collapsable: false
               },
               {
-                  title: '基础组件',
+                  title: '通用',
                   collapsable: false,
                   children: [
-                      'alert',
+                      'color',
+                      'typography',
                       'button',
                       'icon',
-                      'tag'
+                      'layout'
                   ]
               },
               {
-                title: '导航组件',
+                title: '导航',
                 collapsable: false,
                 children: [
-                    'nav'
+                    'affix',
+                    'breadcrumb',
+                    'dropdown',
+                    'menu',
+                    'pagination',
+                    'steps'
                 ]
               },
               {
-                title: '表单组件',
+                title: '数据录入',
                 collapsable: false,
                 children: [
+                    'radio',
+                    'checkbox',
                     'input',
+                    'date-picker',
+                    'input-number',
+                    'time-picker',
+                    'form',
+                    'transfer',
+                    'cascader',
+                    'select',
                     'switch'
+                ]
+              },
+              {
+                title: '数据展示',
+                collapsable: false,
+                children: [
+                  'list',
+                  'popover',
+                  'tree',
+                  'tooltip',
+                  'timeline',
+                  'tag',
+                  'tabs',
+                  'table'
+                ]
+              },
+              {
+                title: '反馈',
+                collapsable: false,
+                children: [
+                    'alert',
+                    'drawer',
+                    'modal',
+                    'message',
+                    'loading',
+                    'skeleton'
                 ]
               },
               {
                 title: '其他',
                 collapsable: false,
-                children: []
+                children: [
+                    'anchor'
+                ]
               }, {
                 title: 'Business',
                 collapsable: false
