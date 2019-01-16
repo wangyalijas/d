@@ -1,8 +1,8 @@
 <template>
   <transition name="w-zoom-in-center">
-    <div class="w__tag" :class="'w__tag--'+color">
-      <span class="w__tag--desc"><slot></slot></span>
-      <i v-if="closable" class="w-icon-close2 w__tag--close" @click="hiddenTag"></i>
+    <div class="w-tag" :class="`w-tag__${type}`">
+      <span class="w-tag__desc"><slot></slot></span>
+      <i v-if="closable" class="w-icon-close2 w-tag__close" @click="hiddenTag"></i>
     </div>
   </transition>
 </template>
@@ -15,7 +15,7 @@
         type: Boolean,
         default: false
       },
-      color: {
+      type: {
         type: String,
         default: 'primary'
       }
@@ -34,19 +34,37 @@
   }
 </script>
 <style lang="scss">
-.w__tag {
+.w-tag {
     display: inline-block;
-    padding: 1px 8px;
-    color: #fff;
-    font-size: 14px;
-    line-height: 1.5;
-    text-align: center;
+    height: 32px;
+    line-height: 30px;
+    padding: 0 10px;
     white-space: nowrap;
-    border: 1px solid #dfdfdf;
+    font-size: 12px;
+    color: #409eff;
     border-radius: 4px;
-    outline: 0;
-    color: #3f536e;
-    border-color: #dfdfdf;
-    background-color: #f7f7f7;
+    box-sizing: border-box;
+    border: 1px solid rgba(64,158,255,.2);
+    background-color: rgba(64,158,255,.1);
+}
+.w-tag__success {
+  background-color: rgba(103,194,58,.1);
+  border-color: rgba(103,194,58,.2);
+  color: #67c23a;
+}
+.w-tag__info {
+  background-color: hsla(220,4%,58%,.1);
+  border-color: hsla(220,4%,58%,.2);
+  color: #909399;
+}
+.w-tag__warning {
+  background-color: rgba(230,162,60,.1);
+  border-color: rgba(230,162,60,.2);
+  color: #e6a23c;
+}
+.w-tag__error {
+  background-color: hsla(0,87%,69%,.1);
+  border-color: hsla(0,87%,69%,.2);
+  color: #f56c6c;
 }
 </style>
