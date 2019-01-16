@@ -57,7 +57,8 @@ module.exports = {
                 title: '表单组件',
                 collapsable: false,
                 children: [
-                    'input'
+                    'input',
+                    'switch'
                 ]
               },
               {
@@ -72,8 +73,8 @@ module.exports = {
       },
       lastUpdated: '上次更新',
       serviceWorker: {
-        updatePopup: { 
-          message: '发现最新发布w.in-design！', 
+        updatePopup: {
+          message: '发现最新发布w.in-design！',
           buttonText: '更新'
         }
       }
