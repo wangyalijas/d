@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'switch',
+  name: 'WSwitch',
   model: {
     prop: 'toggled',
     event: 'toggle'

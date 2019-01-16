@@ -43,7 +43,7 @@
 
 <script>
 export default {
-  name: 'radio'
+  name: 'WRadio'
 }
 </script>
 
