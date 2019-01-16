@@ -76,11 +76,16 @@ export default {
         height: 40px;
         line-height: 40px;
         margin: 0;
+        color: #666;
         text-align: center;
         font-size: 14px;
         font-weight: normal;
         border-top: 1px solid #eee;
+        transition: all .25s ease-in-out;
         cursor: pointer;
+        &:hover {
+          color: $primary-color;
+        }
       }
     }
   }
