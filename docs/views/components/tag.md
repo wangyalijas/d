@@ -2,7 +2,7 @@
 # Tag 标签
 
 <template>
- <tag />
+ <m-tag />
 </template>
 
 ## API

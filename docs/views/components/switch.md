@@ -2,7 +2,7 @@
 # Switch 开关
 
 <template>
-  <switch />
+  <m-switch />
 </template>
 
 ## API
