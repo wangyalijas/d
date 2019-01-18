@@ -1,10 +1,10 @@
 ---
 home: true
 heroImage: /logo.png
-heroText: W.in-design
+heroText: W.in-Design
 tagline: 一个基于vue2.x开发的轻量级组件库
 actionText: 快速上手 →
-actionLink: /zh/guide/
+actionLink: /views/components/introduce
 features:
 - title: 智慧服务
   details: intelligent
