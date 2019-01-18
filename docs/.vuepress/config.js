@@ -1,4 +1,19 @@
 module.exports = {
+    configureWebpack: {
+      module: {
+        rule: [{
+          test: /\.s[ac]ss$/,
+          loader: ['style-loader', 'css-loader?importLoaders=1', 'sass-loader']
+        },
+        {
+          test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+          loader: 'url-loader',
+          options: {
+            limit: 10000
+          }
+        }]
+      }
+    },
     base: '/win-design/',
     title: 'Win-Design',
     description: '基于vue2.x的组件库',
@@ -19,7 +34,7 @@ module.exports = {
       editLinkText: '在 GitHub 上编辑此页',
       nav: [
         { text: '指南', link: '/' },
-        { text: '组件', link: '/views/components/tag'},
+        { text: '组件', link: '/views/components/introduce'},
         { text: 'ABOUT', link: 'http://www.wued.com.cn' }
       ],
       sidebar: {
@@ -117,7 +132,7 @@ module.exports = {
       lastUpdated: '上次更新',
       serviceWorker: {
         updatePopup: {
-          message: '发现最新发布w.in-design！',
+          message: '发现最新发布w.in-Design！',
           buttonText: '更新'
         }
       }
