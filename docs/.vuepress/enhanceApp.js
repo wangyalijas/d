@@ -4,7 +4,7 @@
 import Vue from 'vue'
 import HighLight from 'highlight.js'
 import WinDesign from '../../packages/local'
-
+import '../../packages/themes/default/index.scss'
 
 export default ({
   Vue
