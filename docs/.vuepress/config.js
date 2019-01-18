@@ -1,24 +1,14 @@
 module.exports = {
     configureWebpack: {
       module: {
-        rule: [{
-          test: /\.s[ac]ss$/,
-          loader: ['style-loader', 'css-loader?importLoaders=1', 'sass-loader']
-        },
-        {
-          test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-          loader: 'url-loader',
-          options: {
-            limit: 10000
-          }
-        }]
+        rules: []
       }
     },
     base: '/win-design/',
     title: 'Win-Design',
     description: '基于vue2.x的组件库',
     head: [
-      ['link', { rel: 'icon', href: '/favicon.ico' }],
+      ['link', { rel: 'icon', href: '/logo.png' }],
       ['link', { rel: 'manifest', href: '/manifest.json' }],
       ['meta', { name: 'theme-color', content: '#3eaf7c' }],
       ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
@@ -29,6 +19,7 @@ module.exports = {
     ],
     serviceWorker: true,
     themeConfig: {
+      logo: '/logo.png',
       docsDir: 'docs',
       editLinks: true,
       editLinkText: '在 GitHub 上编辑此页',
