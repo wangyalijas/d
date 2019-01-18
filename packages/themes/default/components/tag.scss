@@ -1,0 +1,84 @@
+@import '../core/index.scss';
+.w-tag {
+    display: inline-block;
+    height: 32px;
+    line-height: 30px;
+    padding: 0 10px;
+    white-space: nowrap;
+    font-size: 12px;
+    color: $primary-color;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 1px solid rgba(64,158,255,.2);
+    background-color: rgba(64,158,255,.1);
+    .icon-close {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      line-height: 14px;
+      margin: -2px -5px 0 5px;
+      text-align: center;
+      vertical-align: middle;
+      border-radius: 100%;
+      cursor: pointer;
+      &:hover {
+        color: #fff;
+        background-color: $primary-color;
+      }
+    }
+    .w-tag--close__success {
+      &:hover {
+        background-color: $success-color;
+      }
+    }
+    .w-tag--close__info {
+      &:hover {
+        background-color: $info-color;
+      }
+    }
+    .w-tag--close__warning {
+      &:hover {
+        background-color: $warning-color;
+      }
+    }
+    .w-tag--close__error {
+      &:hover {
+        background-color: $error-color;
+      }
+    }
+}
+.w-tag--success {
+  background-color: rgba(103,194,58,.1);
+  border-color: rgba(103,194,58,.2);
+  color: $success-color;
+}
+.w-tag--info {
+  background-color: hsla(220,4%,58%,.1);
+  border-color: hsla(220,4%,58%,.2);
+  color: $info-color;
+}
+.w-tag--warning {
+  background-color: rgba(230,162,60,.1);
+  border-color: rgba(230,162,60,.2);
+  color: $warning-color;
+}
+.w-tag--error {
+  background-color: hsla(0,87%,69%,.1);
+  border-color: hsla(0,87%,69%,.2);
+  color: $error-color;
+}
+.w-tag--medium {
+  height: 28px;
+  line-height: 26px;
+}
+.w-tag--small {
+  height: 24px;
+  line-height: 22px;
+  padding: 0 8px;
+}
+.w-tag--mini {
+  height: 20px;
+  line-height: 18px;
+  padding: 0 6px;
+  font-size: 10px;
+}
