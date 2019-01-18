@@ -1,11 +1,11 @@
 {
   "name": "win-design",
-  "version": "0.0.15",
+  "version": "0.0.18",
   "description": "A UI Components Library with Vue2.x",
   "author": "wued",
   "main": "dist/win-design.js",
   "files": [
-    "dist/win-design.js",
+    "dist/*",
     "packages"
   ],
   "private": false,
@@ -19,7 +19,8 @@
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
     "build": "node build/build.js",
-    "publish": "node build/publish.js"
+    "themes": "sass packages/themes:dist/themes && cp-cli packages/themes/fonts dist/themes/fonts",
+    "publish": "rm -rf ./dist && node build/publish.js && npm run themes"
   },
   "dependencies": {
     "vue": "^2.5.2",
@@ -48,6 +49,7 @@
     "babel-preset-stage-2": "^6.22.0",
     "chalk": "^2.0.1",
     "copy-webpack-plugin": "^4.0.1",
+    "cp-cli": "^1.1.2",
     "css-loader": "^0.28.0",
     "eslint": "^4.15.0",
     "eslint-config-standard": "^10.2.1",
@@ -75,9 +77,11 @@
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
     "rimraf": "^2.6.0",
+    "sass": "^1.16.0",
     "sass-loader": "^7.1.0",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
+    "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
     "vue-jest": "^1.0.2",
