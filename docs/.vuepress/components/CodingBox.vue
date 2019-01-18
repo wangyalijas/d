@@ -1,15 +1,16 @@
 <template>
   <section class="coding-box">
-    <h2 v-text="title" class="coding-title"></h2>
+    <h2 v-if="title" v-text="title" class="coding-title"></h2>
     <section class="code-wrapper">
       <section class="slot-wrapper">
         <slot></slot>
       </section>
       <section class="collapse-wrapper">
-        <div :class="['code-container', showCode ? 'code-container__show' : '']">
+        <div :class="['code-container', showCode ? 'code-container--show' : '']">
           <pre><code v-text="code" ref="code"></code></pre>
         </div>
-        <h3 v-text="`${showCode ? '隐藏' : '查看'}代码`" class="toggle-collapse__button" @click="toggleCodingBox"></h3>
+        <h3 v-text="`${showCode ? '隐藏' : '查看'}代码`"
+            class="toggle-collapse--button" @click="toggleCodingBox"></h3>
       </section>
     </section>
   </section>
@@ -46,6 +47,7 @@ export default {
   position: relative;
   z-index: 9999;
   .code-wrapper {
+    margin-top: 25px;
     border-radius: 5px;
     border: 1px solid #eee;
     transition: all .25s ease-in-out;
@@ -66,12 +68,12 @@ export default {
         border-top: 1px solid transparent;
         overflow: hidden;
       }
-      .code-container__show {
+      .code-container--show {
         max-height: $code-wrapper-maxheight;
         padding: 20px 10px 20px 20px;
         border-top: 1px solid #eee;
       }
-      .toggle-collapse__button {
+      .toggle-collapse--button {
         width: 100%;
         height: 40px;
         line-height: 40px;
