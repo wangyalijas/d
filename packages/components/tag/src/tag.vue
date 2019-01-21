@@ -1,7 +1,7 @@
 <template>
   <span :class="['w-tag', `w-tag--${type}`, `w-tag--${size}`]">
     <slot></slot>
-    <i v-if="closable" :class="['icon icon-close', `w-tag--close__${type}`]"
+    <i v-if="closable" :class="['w-icon-close', `w-tag--close__${type}`]"
        @click="hiddenTag"></i>
   </span>
 </template>
