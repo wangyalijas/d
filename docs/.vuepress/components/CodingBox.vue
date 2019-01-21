@@ -1,12 +1,13 @@
 <template>
   <section class="coding-box">
-    <h2 v-if="title" v-text="title" class="coding-title"></h2>
+    <p v-if="content" v-text="content" class="coding-content"></p>
     <section class="code-wrapper">
       <section class="slot-wrapper">
         <slot></slot>
       </section>
       <section class="collapse-wrapper">
         <div :class="['code-container', showCode ? 'code-container--show' : '']">
+          <p v-if="description" v-text="description" class="code-description"></p>
           <pre><code v-text="code" ref="code"></code></pre>
         </div>
         <h3 v-text="`${showCode ? '隐藏' : '查看'}代码`"
@@ -26,7 +27,8 @@ export default {
   },
   props: {
     code: String,
-    title: String
+    content: String,
+    description: String
   },
   methods: {
     toggleCodingBox () {
@@ -46,6 +48,11 @@ export default {
 .coding-box {
   position: relative;
   z-index: 9999;
+  .coding-content {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #666;
+  }
   .code-wrapper {
     margin-top: 25px;
     border-radius: 5px;
@@ -60,6 +67,23 @@ export default {
     }
     .collapse-wrapper {
       @import "../stylesheet/highlight-style";
+      .code-description {
+        position: relative;
+        padding: 15px;
+        font-size: 14px;
+        color: #888;
+        background-color: #fff;
+        border-radius: 4px;
+        border: 1px solid #eee;
+        &:after {
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          font-size: 12px;
+          color: #ccc;
+          content: 'Description'
+        }
+      }
       .code-container {
         max-height: 0;
         padding: 0 10px 0 20px;
