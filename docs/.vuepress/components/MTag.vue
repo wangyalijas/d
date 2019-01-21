@@ -1,6 +1,6 @@
 <template>
   <section class="tag-demo">
-    <coding-box title="" :code="code">
+    <coding-box :code="code">
       <w-tag>标签一</w-tag>
       <w-tag type="success">标签二</w-tag>
       <w-tag type="info">标签三</w-tag>

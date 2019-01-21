@@ -1,6 +1,6 @@
 <template>
   <section class="tag-demo">
-    <coding-box title="" :code="code">
+    <coding-box :code="code">
       <w-tag>常规标签</w-tag>
       <w-tag size="medium">中号标签</w-tag>
       <w-tag size="small">小号标签</w-tag>

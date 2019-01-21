@@ -1,6 +1,6 @@
 <template>
   <section class="tag-demo">
-    <coding-box title="" :code="code">
+    <coding-box :code="code">
       <w-tag v-for="(tag, index) in tags" :key="index"
              :closable="tag.closable"
              :type="tag.type" @close="handleClose(index)">{{tag.name}}</w-tag>
