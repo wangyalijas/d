@@ -1,17 +1,18 @@
-@import '../core/index.scss';
-.w-tag {
-    display: inline-block;
-    height: 32px;
-    line-height: 30px;
-    padding: 0 10px;
+@import '../core/variable';
+@import '../mixins/mixins';
+@include b(tag) {
+  display: inline-block;
+    height: $--tag-default--height;
+    line-height: calc(#{$--tag-default--height} - 2px);
+    padding: $--tag-default--padding;
     white-space: nowrap;
-    font-size: 12px;
-    color: $primary-color;
+    font-size: $--tag-font;
+    color: $--tag-default-color;
     border-radius: 4px;
     box-sizing: border-box;
-    border: 1px solid rgba(64,158,255,.2);
-    background-color: rgba(64,158,255,.1);
-    .icon-close {
+    border: 1px solid $--tag-default-border;
+    background-color: $--tag-default-bg;
+    .w-icon-close {
       display: inline-block;
       width: 14px;
       height: 14px;
@@ -23,62 +24,62 @@
       cursor: pointer;
       &:hover {
         color: #fff;
-        background-color: $primary-color;
+        background-color: $--tag-default-color;
       }
     }
-    .w-tag--close__success {
+  @include m(success) {
+    background-color: $--tag-success-bg;
+    border-color: $--tag-success-border;
+    color: $--tag-success-color;
+    .w-icon-close {
       &:hover {
-        background-color: $success-color;
+        background-color: $--tag-success-color;
       }
     }
-    .w-tag--close__info {
+  }
+  @include m(info) {
+    background-color: $--tag-info-bg;
+    border-color: $--tag-info-border;
+    color: $--tag-info-color;
+    .w-icon-close {
       &:hover {
-        background-color: $info-color;
+        background-color: $--tag-info-color;
       }
     }
-    .w-tag--close__warning {
+  }
+  @include m(warning) {
+    background-color: $--tag-warning-bg;
+    border-color: $--tag-warning-border;
+    color: $--tag-warning-color;
+    .w-icon-close {
       &:hover {
-        background-color: $warning-color;
+        background-color: $--tag-warning-color;
       }
     }
-    .w-tag--close__error {
+  }
+  @include m(error) {
+    background-color: $--tag-error-bg;
+    border-color: $--tag-error-border;
+    color: $--tag-error-color;
+    .w-icon-close {
       &:hover {
-        background-color: $error-color;
+        background-color: $--tag-error-color;
       }
     }
-}
-.w-tag--success {
-  background-color: rgba(103,194,58,.1);
-  border-color: rgba(103,194,58,.2);
-  color: $success-color;
-}
-.w-tag--info {
-  background-color: hsla(220,4%,58%,.1);
-  border-color: hsla(220,4%,58%,.2);
-  color: $info-color;
-}
-.w-tag--warning {
-  background-color: rgba(230,162,60,.1);
-  border-color: rgba(230,162,60,.2);
-  color: $warning-color;
-}
-.w-tag--error {
-  background-color: hsla(0,87%,69%,.1);
-  border-color: hsla(0,87%,69%,.2);
-  color: $error-color;
-}
-.w-tag--medium {
-  height: 28px;
-  line-height: 26px;
-}
-.w-tag--small {
-  height: 24px;
-  line-height: 22px;
-  padding: 0 8px;
-}
-.w-tag--mini {
-  height: 20px;
-  line-height: 18px;
-  padding: 0 6px;
-  font-size: 10px;
+  }
+  @include m(medium) {
+    height: $--tag-medium--height;
+    line-height: calc(#{$--tag-medium--height} - 2px);
+    padding: $--tag-medium--padding;
+  }
+  @include m(small) {
+    height: $--tag-small--height;
+    line-height: calc(#{$--tag-small--height} - 2px);
+    padding: $--tag-small--padding;
+  }
+  @include m(mini) {
+    height: $--tag-mini--height;
+    line-height: calc(#{$--tag-mini--height} - 2px);
+    padding: $--tag-mini--padding;
+  }
 }
