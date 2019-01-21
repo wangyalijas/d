@@ -1,5 +1,30 @@
 $primary-color: #409eff;
-$success-color: #67c23a;
-$info-color: #909399;
-$warning-color: #e6a23c;
-$error-color: #f56c6c;
+
+$--color-primary: #409EFF !default;
+
+$--color-text-placeholder: #c0c4cc !default;
+$--color-text-regular: #606266 !default;
+$--color-text-primary: #303133 !default;
+
+$--color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) !default;
+
+// Tag
+$--tag-default-color: $primary-color !default;
+$--tag-default-border: rgba(64,158,255,.2) !default;
+$--tag-default-bg: rgba(64,158,255,.1) !default;
+
+$--tag-success-color: #67c23a !default;
+$--tag-success-border: rgba(103,194,58,.2) !default;
+$--tag-success-bg: rgba(103,194,58,.1) !default;
+
+$--tag-info-color: #909399 !default;
+$--tag-info-border: hsla(220,4%,58%,.2) !default;
+$--tag-info-bg: hsla(220,4%,58%,.1) !default;
+
+$--tag-warning-color: #e6a23c !default;
+$--tag-warning-border: rgba(230,162,60,.2) !default;
+$--tag-warning-bg: rgba(230,162,60,.1) !default;
+
+$--tag-error-color: #f56c6c !default;
+$--tag-error-border: hsla(0,87%,69%,.2) !default;
+$--tag-error-bg: hsla(0,87%,69%,.1) !default;

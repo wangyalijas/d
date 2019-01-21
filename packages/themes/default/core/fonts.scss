@@ -1,5 +1,5 @@
 /**
- * IconFont
+ * 字体图标
  */
  @font-face {
     font-family: 'feather';
@@ -12,7 +12,7 @@
     font-size: normal;
   }
   
-  .icon {
+ [class^="w-icon-"], [class*="w-icon-"] {
     font-family: 'feather' !important;
     speak: none;
     font-style: normal;
@@ -24,5 +24,7 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
-  .icon-close:before { content: "\e8f6"; }
+  .w-icon-close:before { content: "\e8f6"; }
+
+  .w-icon-arrow-right:before { content: "\e844"; }
   
