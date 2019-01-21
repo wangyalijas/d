@@ -1,9 +1,9 @@
 
 # Switch 开关
 
-<template>
-  <m-switch />
-</template>
+## 基础用法
+
+<m-switch />
 
 ## API
 
