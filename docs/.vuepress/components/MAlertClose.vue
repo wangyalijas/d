@@ -12,9 +12,20 @@
 export default {
     data () {
         return {
-          code: `<w-alert close-text="关闭" title="文本内容作为关闭按钮" type="success"></w-alert>
-<w-alert title="关闭回调函数" type="warning" @close="handleClose"></w-alert>
-<w-alert :closable="false" title="隐藏关闭按钮" type="info"></w-alert>`
+          code: `<template>
+  <w-alert close-text="关闭" title="文本内容作为关闭按钮" type="success"></w-alert>
+  <w-alert title="关闭回调函数" type="warning" @close="handleClose"></w-alert>
+  <w-alert :closable="false" title="隐藏关闭按钮" type="info"></w-alert>
+</template>
+<script>
+  export default {
+    methods: {
+      handleClose () {
+        alert('关闭了!')
+      }
+    }
+  }
+<\/script>`
         }
     },
     methods: {
