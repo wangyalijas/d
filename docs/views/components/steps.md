@@ -1,30 +1,30 @@
-## Steps 步骤条
+# Steps 步骤条
 引导用户按照流程完成任务的分步导航条，可根据实际应用场景设定步骤，步骤不得少于 2 步。
 
 
 
 
 
-### 基础用法
+## 基础用法
 
 
 简单的步骤条。
  <m-steps />
 
-### 含状态步骤条
+## 含状态步骤条
 
 
 每一步骤显示出该步骤的状态。
  <m-steps-status />
 
-### 有描述的步骤条
+## 有描述的步骤条
 
 
 每个步骤有其对应的步骤状态描述。
 
 <m-steps-describe />
 
-### 居中的步骤条
+## 居中的步骤条
 
 
 标题和描述都将居中。
@@ -32,7 +32,7 @@
 <m-steps-center />
 
 
-### 带图标的步骤条
+## 带图标的步骤条
 
 
 步骤条内可以启用各种自定义的图标。
@@ -40,7 +40,7 @@
 <m-steps-icon />
 
 
-### 竖式步骤条
+## 竖式步骤条
 
 
 竖直方向的步骤条。
@@ -48,7 +48,7 @@
 <m-steps-vertical />
 
 
-### 简洁风格的步骤条
+## 简洁风格的步骤条
 
 
 设置 simple 可应用简洁风格，该条件下 align-center / description / direction / space 都将失效。
@@ -56,7 +56,7 @@
 <m-steps-simple />
 
 
-### Steps Attributes
+## Steps Attributes
 
 
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
@@ -70,7 +70,7 @@
 | simple | 是否应用简洁风格 | Boolean | - | false |
 
 
-### Step Attributes
+## Step Attributes
 
 
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
