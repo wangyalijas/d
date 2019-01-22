@@ -35,7 +35,7 @@
   </label>
 </template>
 <script>
-import Emitter from '../../../mixins/emitter'
+  import Emitter from '../../../mixins/emitter'
 
 export default {
   name: 'WRadioButton',
@@ -73,7 +73,7 @@ export default {
     _radioGroup () {
       let parent = this.$parent
       while (parent) {
-        if (parent.$options.componentName !== 'ElRadioGroup') {
+        if (parent.$options.componentName !== 'WRadioGroup') {
           parent = parent.$parent
         } else {
           return parent
