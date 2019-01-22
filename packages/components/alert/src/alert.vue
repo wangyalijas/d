@@ -18,56 +18,56 @@
 </template>
 <script>
 export default {
-    name: 'WAlert',
-    data () {
-        return {
-            visible: true
-        }
-    },
-    props: {
-        showIcon: Boolean,
-        alignCenter: Boolean,
-        type: {
-            type: String,
-            default: 'info'
-        },
-        title: {
-            type: String,
-            default: ''
-        },
-        description: {
-            type: String,
-            default: ''
-        },
-        closable: {
-            type: Boolean,
-            default: true
-        },
-        boldTitle: {
-            type: Boolean,
-            default: false
-        },
-        closeText: {
-            type: String,
-            default: ''
-        }
-    },
-    computed: {
-        typeClass () {
-            return `w-alert--${this.type}`
-        },
-        iconClass () {
-            return this.type ? `w-icon-${this.type}` : 'w-icon-info'
-        },
-        isBoldTitle () {
-            return this.boldTitle && this.description ? 'is-bold' : ''
-        }
-    },
-    methods: {
-        handleClose () {
-            this.visible = false
-            this.$emit('close')
-        }
+  name: 'WAlert',
+  data () {
+    return {
+      visible: true
     }
+  },
+  props: {
+    showIcon: Boolean,
+    alignCenter: Boolean,
+    type: {
+      type: String,
+      default: 'info'
+    },
+    title: {
+      type: String,
+      default: ''
+    },
+    description: {
+      type: String,
+      default: ''
+    },
+    closable: {
+      type: Boolean,
+      default: true
+    },
+    boldTitle: {
+      type: Boolean,
+      default: false
+    },
+    closeText: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    typeClass () {
+      return `w-alert--${this.type}`
+    },
+    iconClass () {
+      return this.type ? `w-icon-${this.type}` : 'w-icon-info'
+    },
+    isBoldTitle () {
+      return this.boldTitle && this.description ? 'is-bold' : ''
+    }
+  },
+  methods: {
+    handleClose () {
+      this.visible = false
+      this.$emit('close')
+    }
+  }
 }
 </script>
