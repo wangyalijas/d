@@ -69,7 +69,8 @@ export default {
       @import "../stylesheet/highlight-style";
       .code-description {
         position: relative;
-        padding: 15px;
+        margin: 0;
+        padding: 20px 15px;
         font-size: 14px;
         color: #888;
         background-color: #fff;
@@ -93,7 +94,7 @@ export default {
         overflow: hidden;
       }
       .code-container--show {
-        max-height: $code-wrapper-maxheight;
+        max-height: calc(#{$code-wrapper-maxheight} + 100px);
         padding: 20px 10px 20px 20px;
         border-top: 1px solid #eee;
       }
