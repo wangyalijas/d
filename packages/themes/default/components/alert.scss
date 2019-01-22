@@ -1,0 +1,68 @@
+@import '../core/variable';
+@import '../mixins/mixins';
+
+@include b(alert) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: $--alert-padding;
+    color: $--alert-default-color;
+    font-size: $--alert-font;
+    box-sizing: border-box;
+    background-color: $--alert-default-bg;
+    border-radius: $--alert-border-radius;
+    .w-icon-close {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        line-height: 14px;
+        margin: -2px -5px 0 5px;
+        text-align: center;
+        vertical-align: middle;
+        color: #ccc;
+        cursor: pointer;
+        &:hover {
+            color: #666;
+        }
+      }
+    @include e(title) {
+        font-size: $--alert-title-font-size;
+        @include when(bold) {
+            font-weight: bold;
+        }
+    }
+    @include e(content) {
+      width: 100%;
+      padding: $--alert-content-padding;
+      align-items: center;
+    }
+    @include e(closebutton) {
+        @include when(default) {
+            flex-shrink: 0;
+            font-size: 12px;
+            font-style: normal;
+            color: #ccc;
+            cursor: pointer;
+            &:hover {
+                color: #666;
+            }
+        }
+    }
+    @include e(description) {
+        margin: 5px 0 0 0;
+        line-height: 1.4;
+    }
+    @include m(success) {
+      color: $--alert-success-color;
+      background-color: $--alert-success-bg;
+    }
+    @include m(warning) {
+      color: $--alert-warning-color;
+      background-color: $--alert-warning-bg;
+    }
+    @include m(error) {
+      color: $--alert-error-color;
+      background-color: $--alert-error-bg;
+    }
+}
