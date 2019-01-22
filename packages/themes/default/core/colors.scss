@@ -28,3 +28,17 @@ $--tag-warning-bg: rgba(230,162,60,.1) !default;
 $--tag-error-color: #f56c6c !default;
 $--tag-error-border: hsla(0,87%,69%,.2) !default;
 $--tag-error-bg: hsla(0,87%,69%,.1) !default;
+
+// Alert
+
+$--alert-default-bg: #f4f5f7 !default;
+$--alert-default-color: #999 !default;
+
+$--alert-success-bg: #f0f9eb !default;
+$--alert-success-color: #67c23a !default;
+
+$--alert-warning-bg: #fdf6ec !default;
+$--alert-warning-color: #e6a23c !default;
+
+$--alert-error-bg: #fef0f0 !default;
+$--alert-error-color: #f56c6c !default;
