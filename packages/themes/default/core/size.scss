@@ -1,3 +1,13 @@
+$--base-border-radius: 4px !default;
+// Font
+
+$--font-size-base: 14px !default;
+$--font-size-small: 13px !default;
+$--font-size-large: 18px !default;
+$--font-color-disabled-base: #bbb !default;
+$--font-weight-primary: 500 !default;
+$--font-line-height-primary: 24px !default;
+
 // Tag
 
 $--tag-default--height: 32px;
@@ -14,6 +24,19 @@ $--tag-font: 12px;
 
 $--alert-padding: 8px 16px !default;
 $--alert-font: 14px !default;
-$--alert-border-radius: 4px !default;
+$--alert-border-radius: $--base-border-radius !default;
 $--alert-title-font-size: 14 !default;
 $--alert-content-padding: 0 8px !default;
+
+// Input
+$--input-border-radius: $--base-border-radius !default;
+$--input-font-size: $--font-size-base !default;
+$--input-height: 40px !default;
+$--input-medium-height: 36px !default;
+$--input-medium-font-size: 14px !default;
+$--input-small-font-size: 13px !default;
+$--input-small-height: 32px !default;
+$--input-mini-font-size: 12px !default;
+$--input-mini-height: 28px !default;
+
+
