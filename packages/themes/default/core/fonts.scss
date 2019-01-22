@@ -8,7 +8,7 @@
     font-weight: normal;
     font-style: normal;
   }
-  
+
  [class^="w-icon-"], [class*="w-icon-"] {
     font-family: 'w-icons' !important;
     speak: none;
@@ -20,11 +20,11 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   .w-icon-close:before { content: "\e60f"; }
 
   .w-icon-arrow-right:before { content: "\e604"; }
-  
+
   .w-icon-info:before { content: "\e61a"; }
 
   .w-icon-error:before { content: "\e62c"; }
@@ -32,3 +32,19 @@
   .w-icon-success:before { content: "\e62d"; }
 
   .w-icon-warning:before { content: "\e62e"; }
+
+  .w-icon-edit:before {
+    content: "\E61C";
+  }
+
+  .w-icon-upload:before {
+    content: "\E60D";
+  }
+
+  .w-icon-picture:before {
+    content: "\E629";
+  }
+
+  .w-icon-check:before {
+    content: "\E611";
+  }
