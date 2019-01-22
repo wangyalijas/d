@@ -33,9 +33,12 @@ export default {
             type: 'error',
             name: '标签五'
           }],
-          code: `<w-tag v-for="(tag, index) in tags" :key="index"
-       :closable="tag.closable"
-       :type="tag.type" @close="handleClose(index)">{{tag.name}}</w-tag>
+          code: `
+<template>
+  <w-tag v-for="(tag, index) in tags" :key="index"
+         :closable="tag.closable"
+         :type="tag.type" @close="handleClose(index)">{{tag.name}}</w-tag>
+</template>
 <script>
   export default {
     data () {
