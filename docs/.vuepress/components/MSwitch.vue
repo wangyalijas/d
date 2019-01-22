@@ -1,7 +1,9 @@
 <template>
-  <coding-box :code="code">
-    <w-switch v-model="toggle"></w-switch>
-  </coding-box>
+  <section class="switch-demo">
+    <coding-box :code="code">
+      <w-switch v-model="toggle"></w-switch>
+    </coding-box>
+  </section>
 </template>
 
 <script>
@@ -15,6 +17,6 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss">
 
 </style>

@@ -14,11 +14,12 @@
   export default {
     data () {
       return {
-        code: `      <w-steps :active="active" finish-status="success">
+        code: `    <w-steps :active="active" finish-status="success">
         <w-step title="步骤 1"></w-step>
         <w-step title="步骤 2"></w-step>
         <w-step title="步骤 3"></w-step>
-      </w-steps>`
+      </w-steps>` ,
+        active: 0
       }
     }
   }

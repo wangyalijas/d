@@ -1,6 +1,6 @@
 <template>
   <div
-    class="el-step"
+    class="w-step"
     :style="style"
     :class="[
       !isSimple && `is-${$parent.direction}`,
@@ -10,42 +10,42 @@
      ]">
     <!-- icon & line -->
     <div
-      class="el-step__head"
+      class="w-step__head"
       :class="`is-${currentStatus}`">
       <div
-        class="el-step__line"
+        class="w-step__line"
         :style="isLast ? '' : { marginRight: $parent.stepOffset + 'px' }"
       >
-        <i class="el-step__line-inner" :style="lineStyle"></i>
+        <i class="w-step__line-inner" :style="lineStyle"></i>
       </div>
 
-      <div class="el-step__icon" :class="`is-${icon ? 'icon' : 'text'}`">
+      <div class="w-step__icon" :class="`is-${icon ? 'icon' : 'text'}`">
         <slot
           v-if="currentStatus !== 'success' && currentStatus !== 'error'"
           name="icon">
-          <i v-if="icon" class="el-step__icon-inner" :class="[icon]"></i>
-          <div class="el-step__icon-inner" v-if="!icon && !isSimple">{{ index + 1 }}</div>
+          <i v-if="icon" class="w-step__icon-inner" :class="[icon]"></i>
+          <div class="w-step__icon-inner" v-if="!icon && !isSimple">{{ index + 1 }}</div>
         </slot>
         <i
           v-else
-          :class="['el-icon-' + (currentStatus === 'success' ? 'check' : 'close')]"
-          class="el-step__icon-inner is-status"
+          :class="['w-icon-' + (currentStatus === 'success' ? 'check' : 'close')]"
+          class="w-step__icon-inner is-status"
         >
         </i>
       </div>
     </div>
     <!-- title & description -->
-    <div class="el-step__main">
+    <div class="w-step__main">
       <div
-        class="el-step__title"
+        class="w-step__title"
         ref="title"
         :class="['is-' + currentStatus]">
         <slot name="title">{{ title }}</slot>
       </div>
-      <div v-if="isSimple" class="el-step__arrow"></div>
+      <div v-if="isSimple" class="w-step__arrow"></div>
       <div
         v-else
-        class="el-step__description"
+        class="w-step__description"
         :class="['is-' + currentStatus]">
         <slot name="description">{{ description }}</slot>
       </div>

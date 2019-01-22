@@ -1,0 +1,11 @@
+@import '../core/variable';
+@import '../mixins/mixins';
+@import '../mixins/utils';
+@import '../mixins/button';
+
+@include b(radio-group) {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+  font-size: 0;
+}

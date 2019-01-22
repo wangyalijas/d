@@ -1,4 +1,5 @@
 import WTag from './components/tag'
+import WRadion from './components/radio'
 import WSwitch from './components/switch'
 import WBreadcrumb from './components/breadcrumb'
 import WBreadcrumbItem from './components/breadcrumb-item'
@@ -9,6 +10,7 @@ import WInput from './components/input'
 
 export default [
   WTag,
+  WRadion,
   WSwitch,
   WBreadcrumb,
   WBreadcrumbItem,
