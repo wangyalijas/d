@@ -2,9 +2,10 @@
   <label
     class="w-radio"
     :class="[
-      border && radioSize ? 'el-radio--' + radioSize : '',
+      border && radioSize ? 'w-radio--' + radioSize : '',
       { 'is-disabled': isDisabled },
       { 'is-focus': focus },
+      { 'is-bordered': border },
       { 'is-checked': model === label }
     ]"
     role="radio"
@@ -40,12 +41,12 @@
     </span>
   </label>
 </template>
-
 <script>
 import Emitter from '../../../mixins/emitter'
 
 export default {
   name: 'WRadio',
+  componentName: 'WRadio',
 
   mixins: [Emitter],
 
@@ -58,8 +59,6 @@ export default {
       default: ''
     }
   },
-
-  componentName: 'WRadio',
 
   props: {
     value: {},
@@ -79,6 +78,7 @@ export default {
     isGroup () {
       let parent = this.$parent
       while (parent) {
+        console.log(parent.$options.componentName)
         if (parent.$options.componentName !== 'WRadioGroup') {
           parent = parent.$parent
         } else {
@@ -94,7 +94,7 @@ export default {
       },
       set (val) {
         if (this.isGroup) {
-          this.dispatch('ElRadioGroup', 'input', [val])
+          this.dispatch('WRadioGroup', 'input', [val])
         } else {
           this.$emit('input', val)
         }
