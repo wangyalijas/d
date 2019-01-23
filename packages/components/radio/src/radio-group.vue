@@ -17,9 +17,9 @@ const keyCode = Object.freeze({
   DOWN: 40
 })
 export default {
-  name: 'ElRadioGroup',
+  name: 'WRadioGroup',
 
-  componentName: 'ElRadioGroup',
+  componentName: 'WRadioGroup',
 
   inject: {
     wFormItem: {
@@ -99,7 +99,7 @@ export default {
   },
   watch: {
     value (value) {
-      this.dispatch('WFormItem', 'w.form.change', [this.value])
+      this.dispatch('ElFormItem', 'w.form.change', [this.value])
     }
   }
 }
