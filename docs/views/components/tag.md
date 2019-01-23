@@ -14,9 +14,9 @@
 
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
-| type | 类型 | String | primary / success / info / warning / error | primary |
-| size | 大小 | String | medium / small / mini | normal |
 | closable | 是否可关闭 | Boolean | - | false |
+| size | 大小 | String | medium / small / mini | normal |
+| type | 类型 | String | primary / success / info / warning / error | primary |
 
 ## Events
 
