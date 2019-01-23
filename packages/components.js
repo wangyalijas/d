@@ -5,6 +5,8 @@ import WBreadcrumb from './components/breadcrumb'
 import WBreadcrumbItem from './components/breadcrumb-item'
 import WStep from './components/step'
 import WSteps from './components/steps'
+import WPopover from './components/popover'
+import WTooltip from './components/tooltip'
 import WAlert from './components/alert'
 import WInput from './components/input'
 
@@ -16,6 +18,8 @@ export default [
   WBreadcrumbItem,
   WStep,
   WSteps,
+  WPopover,
+  WTooltip,
   WAlert,
   WInput
 ]

@@ -23,6 +23,8 @@
     "publish": "rm -rf ./dist && node build/publish.js && npm run themes"
   },
   "dependencies": {
+    "popper.js": "^1.14.6",
+    "throttle-debounce": "1.1.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
