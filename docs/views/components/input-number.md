@@ -1,4 +1,4 @@
-# InputNumber 数字输入框
+# InputNumber 数字输入框 (✓)
 
 ## 基础用法
 
