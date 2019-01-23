@@ -78,7 +78,6 @@ export default {
     isGroup () {
       let parent = this.$parent
       while (parent) {
-        console.log(parent.$options.componentName)
         if (parent.$options.componentName !== 'WRadioGroup') {
           parent = parent.$parent
         } else {

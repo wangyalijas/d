@@ -1,5 +1,10 @@
 import Tag from './components/tag'
 import Radio from './components/radio'
+import RadioGroup from './components/radio-group'
+import RadioButton from './components/radio-button'
+import CheckBox from './components/checkbox'
+import CheckBoxButton from './components/checkbox-button'
+import CheckBoxGroup from './components/checkbox-group'
 import Switch from './components/switch'
 import Breadcrumb from './components/breadcrumb'
 import BreadcrumbItem from './components/breadcrumb-item'
@@ -36,6 +41,11 @@ export default [
   Input,
   Switch,
   Radio,
+  RadioButton,
+  RadioGroup,
+  CheckBox,
+  CheckBoxButton,
+  CheckBoxGroup,
   Option,
   Breadcrumb,
   BreadcrumbItem,
