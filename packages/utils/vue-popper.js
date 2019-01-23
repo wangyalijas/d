@@ -1,11 +1,11 @@
-import Vue from 'vue';
+import Vue from 'vue'
 import {
   PopupManager
-} from './popup';
-import Popper from 'popper.js';
+} from './popup'
+import Popper from 'popper.js'
 
-const PopperJS = Vue.prototype.$isServer ? function() {} : Popper;
-const stop = e => e.stopPropagation();
+const PopperJS = Vue.prototype.$isServer ? function () {} : Popper
+const stop = e => e.stopPropagation()
 
 /**
  * @param {HTMLElement} [reference=$refs.reference] - The reference element used to position the popper.
@@ -39,141 +39,141 @@ export default {
     },
     popperOptions: {
       type: Object,
-      default() {
+      default () {
         return {
           gpuAcceleration: false
-        };
+        }
       }
     }
   },
 
-  data() {
+  data () {
     return {
       showPopper: false,
       currentPlacement: ''
-    };
+    }
   },
 
   watch: {
     value: {
       immediate: true,
-      handler(val) {
-        this.showPopper = val;
-        this.$emit('input', val);
+      handler (val) {
+        this.showPopper = val
+        this.$emit('input', val)
       }
     },
 
-    showPopper(val) {
-      val ? this.updatePopper() : this.destroyPopper();
-      this.$emit('input', val);
+    showPopper (val) {
+      val ? this.updatePopper() : this.destroyPopper()
+      this.$emit('input', val)
     }
   },
 
   methods: {
-    createPopper() {
-      if (this.$isServer) return;
-      this.currentPlacement = this.currentPlacement || this.placement;
+    createPopper () {
+      if (this.$isServer) return
+      this.currentPlacement = this.currentPlacement || this.placement
       if (!/^(top|bottom|left|right)(-start|-end)?$/g.test(this.currentPlacement)) {
-        return;
+        return
       }
 
-      const options = this.popperOptions;
-      const popper = this.popperElm = this.popperElm || this.popper || this.$refs.popper;
-      let reference = this.referenceElm = this.referenceElm || this.reference || this.$refs.reference;
+      const options = this.popperOptions
+      const popper = this.popperElm = this.popperElm || this.popper || this.$refs.popper
+      let reference = this.referenceElm = this.referenceElm || this.reference || this.$refs.reference
 
       if (!reference &&
         this.$slots.reference &&
         this.$slots.reference[0]) {
-        reference = this.referenceElm = this.$slots.reference[0].elm;
+        reference = this.referenceElm = this.$slots.reference[0].elm
       }
 
-      if (!popper || !reference) return;
-      if (this.visibleArrow) this.appendArrow(popper);
-      if (this.appendToBody) document.body.appendChild(this.popperElm);
+      if (!popper || !reference) return
+      if (this.visibleArrow) this.appendArrow(popper)
+      if (this.appendToBody) document.body.appendChild(this.popperElm)
       if (this.popperJS && this.popperJS.destroy) {
-        this.popperJS.destroy();
+        this.popperJS.destroy()
       }
 
-      options.placement = this.currentPlacement;
-      options.offset = this.offset;
-      this.popperJS = new PopperJS(reference, popper, options);
+      options.placement = this.currentPlacement
+      options.offset = this.offset
+      this.popperJS = new PopperJS(reference, popper, options)
       this.popperJS.options.onCreate(_ => {
-        this.$emit('created', this);
-        this.resetTransformOrigin();
-        this.$nextTick(this.updatePopper);
-      });
+        this.$emit('created', this)
+        this.resetTransformOrigin()
+        this.$nextTick(this.updatePopper)
+      })
       if (typeof options.onUpdate === 'function') {
-        this.popperJS.onUpdate(options.onUpdate);
+        this.popperJS.onUpdate(options.onUpdate)
       }
-      this.popperJS.popper.style.zIndex = PopupManager.nextZIndex();
-      this.popperElm.addEventListener('click', stop);
+      this.popperJS.popper.style.zIndex = PopupManager.nextZIndex()
+      this.popperElm.addEventListener('click', stop)
     },
 
-    updatePopper() {
-      this.popperJS ? this.popperJS.update() : this.createPopper();
+    updatePopper () {
+      this.popperJS ? this.popperJS.update() : this.createPopper()
     },
 
-    doDestroy() {
+    doDestroy () {
       /* istanbul ignore if */
-      if (this.showPopper || !this.popperJS) return;
-      this.popperJS.destroy();
-      this.popperJS = null;
+      if (this.showPopper || !this.popperJS) return
+      this.popperJS.destroy()
+      this.popperJS = null
     },
 
-    destroyPopper() {
+    destroyPopper () {
       if (this.popperJS) {
-        this.resetTransformOrigin();
+        this.resetTransformOrigin()
       }
     },
 
-    resetTransformOrigin() {
+    resetTransformOrigin () {
       let placementMap = {
         top: 'bottom',
         bottom: 'top',
         left: 'right',
         right: 'left'
-      };
-      let placement = this.popperJS.popper.getAttribute('x-placement').split('-')[0];
-      let origin = placementMap[placement];
-      this.popperJS.popper.style.transformOrigin = ['top', 'bottom'].indexOf(placement) > -1 ? `center ${ origin }` : `${ origin } center`;
+      }
+      let placement = this.popperJS.popper.getAttribute('x-placement').split('-')[0]
+      let origin = placementMap[placement]
+      this.popperJS.popper.style.transformOrigin = ['top', 'bottom'].indexOf(placement) > -1 ? `center ${origin}` : `${origin} center`
     },
 
-    appendArrow(element) {
-      let hash;
+    appendArrow (element) {
+      let hash
       if (this.appended) {
-        return;
+        return
       }
 
-      this.appended = true;
+      this.appended = true
 
       for (let item in element.attributes) {
         if (/^_v-/.test(element.attributes[item].name)) {
-          hash = element.attributes[item].name;
+          hash = element.attributes[item].name
           break;
         }
       }
 
-      const arrow = document.createElement('div');
+      const arrow = document.createElement('div')
 
       if (hash) {
-        arrow.setAttribute(hash, '');
+        arrow.setAttribute(hash, '')
       }
-      arrow.setAttribute('x-arrow', '');
-      arrow.className = 'popper__arrow';
-      element.appendChild(arrow);
+      arrow.setAttribute('x-arrow', '')
+      arrow.className = 'popper__arrow'
+      element.appendChild(arrow)
     }
   },
 
-  beforeDestroy() {
-    this.doDestroy();
+  beforeDestroy () {
+    this.doDestroy()
     if (this.popperElm && this.popperElm.parentNode === document.body) {
-      this.popperElm.removeEventListener('click', stop);
-      document.body.removeChild(this.popperElm);
+      this.popperElm.removeEventListener('click', stop)
+      document.body.removeChild(this.popperElm)
     }
   },
 
   // call destroy in keep-alive mode
-  deactivated() {
-    this.$options.beforeDestroy[0].call(this);
+  deactivated () {
+    this.$options.beforeDestroy[0].call(this)
   }
-};
+}
