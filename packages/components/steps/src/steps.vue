@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Migrating from './../../../mixins/migrating';
+import Migrating from '../../../mixins/migrating';
 
 export default {
   name: 'WSteps',
