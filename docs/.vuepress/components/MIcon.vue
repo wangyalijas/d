@@ -24,17 +24,21 @@ export default {
           code: `<template>
   <section class="demo-wrapper">
     <h1 class="label">通用字体图标</h1>
-    <i v-for="(icon, index) in icons" :key="index"
-       :class="['w-icon-' + icon, 'w-icon']"></i>
+    <i class="w-icon-close"></i>
+    <i class="w-icon-view"></i>
+    <i class="w-icon-search"></i>
+    <i class="w-icon-delete"></i>
   </section>
   <section class="demo-wrapper">
     <h1 class="label">行业图标</h1>
-    <w-iconx v-for="(icon, index) in iconxs" :key="index"
-             :name="'icon-x-' + icon"></w-iconx>
+    <w-iconx name="icon-x-toulu"></w-iconx>
+    <w-iconx name="icon-x-erduo"></w-iconx>
+    <w-iconx name="icon-x-xigainv"></w-iconx>
+    <w-iconx name="icon-x-xizang"></w-iconx>
+    <w-iconx name="icon-x-fei"></w-iconx>
+    <w-iconx name="icon-x-weibu"></w-iconx>
   </section>
-</template>
-<script>
-<\/script>`
+</template>`
         }
     }
 }
