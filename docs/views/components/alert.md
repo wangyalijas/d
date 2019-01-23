@@ -8,7 +8,7 @@
 
 <m-alert-icon />
 
-## 添加辅助内容
+## 添加描述内容
 
 <m-alert-content />
 
