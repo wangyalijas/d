@@ -2,7 +2,7 @@
   <label
     class="w-radio"
     :class="[
-      border && radioSize ? 'el-radio--' + radioSize : '',
+      border && radioSize ? 'w-radio--' + radioSize : '',
       { 'is-disabled': isDisabled },
       { 'is-focus': focus },
       { 'is-checked': model === label }
