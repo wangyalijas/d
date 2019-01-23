@@ -23,7 +23,7 @@
 <m-input-number-rule />
 
 
-### Attributes
+## Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |----------|-------------- |----------|--------------------------------  |-------- |
 | controls | 是否使用控制按钮        | Boolean | - | true |
@@ -39,7 +39,7 @@
 | size     | 计数器尺寸           | String   | large, small | - |
 | value    | 绑定值         | Number | - | - |
 
-### Events
+## Events
 | 事件名称 | 说明 | 回调参数 |
 |---------|--------|---------|
 | blur | 在组件 Input 失去焦点时触发 | (event: Event) |
