@@ -16,6 +16,7 @@ import InputNumber from './components/input-number'
 import Icon from './components/icon'
 import Button from './components/button'
 import ButtonGroup from './components/button-group'
+import Popover from './components/popover'
 // import Pagination from './components/pagination/index.js'
 // import Dialog from './components/dialog/index.js'
 // import Autocomplete from './components/autocomplete/index.js'
@@ -56,7 +57,8 @@ export default [
   Step,
   InputNumber,
   Button,
-  ButtonGroup
+  ButtonGroup,
+  Popover
   // Pagination,
   // Dialog,
   // Autocomplete,
