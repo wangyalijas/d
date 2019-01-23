@@ -1,5 +1,5 @@
 
-# CheckBox 多选框
+# CheckBox 多选框 (✓)
 
 ## 基础用法
 <m-checkbox />
