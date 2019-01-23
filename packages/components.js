@@ -2,6 +2,9 @@ import WTag from './components/tag'
 import WRadion from './components/radio'
 import WradioGroup from './components/radio-group'
 import WradioButton from './components/radio-button'
+import WCheckBox from './components/checkbox'
+import WCheckBoxButton from './components/checkbox-button'
+import WCheckBoxGroup from './components/checkbox-group'
 import WSwitch from './components/switch'
 import WBreadcrumb from './components/breadcrumb'
 import WBreadcrumbItem from './components/breadcrumb-item'
@@ -17,6 +20,9 @@ export default [
   WRadion,
   WradioGroup,
   WradioButton,
+  WCheckBox,
+  WCheckBoxButton,
+  WCheckBoxGroup,
   WSwitch,
   WBreadcrumb,
   WBreadcrumbItem,
