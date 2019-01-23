@@ -1,5 +1,5 @@
 <template>
-  <section class="input-demo">
+  <section class="input-demo__size">
     <coding-box :code="code" description="你可以通过改变size来获得不同大小的input输入框, 除了默认的尺寸,你还可以选择medium / small / mini等.">
       <w-input v-model="value1" placeholder="请输入..."></w-input>
       <w-input v-model="value2" size="medium" placeholder="中号输入框..."></w-input>
@@ -41,9 +41,9 @@ export default {
 }
 </script>
 <style lang="scss">
-.input-demo {
+.input-demo__size {
     .w-input {
-        width: 165px;
+        width: 160px;
     }
     .w-input+.w-input {
       margin-left: 10px;

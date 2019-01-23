@@ -28,10 +28,3 @@ export default {
     }
 }
 </script>
-<style lang="scss">
-.input-demo {
-    .w-input {
-        width: 165px;
-    }
-}
-</style>

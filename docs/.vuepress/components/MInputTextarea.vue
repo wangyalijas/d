@@ -1,7 +1,8 @@
 <template>
   <section class="input-demo">
-    <coding-box :code="code">
-      <w-input v-model="value" placeholder="请输入..."></w-input>
+    <coding-box :code="code" description="通过 rows 属性可以规定文本域的行数.">
+      <w-input v-model="value" placeholder="这是一段3行高的文本域..."
+               type="textarea" :rows="3"></w-input>
     </coding-box>
   </section>
 </template>
@@ -13,7 +14,8 @@ export default {
           value: '',
           code: `
 <template>
-  <w-input v-model="value" placeholder="请输入..."></w-input>
+  <w-input v-model="value" placeholder="这是一段3行高的文本域..."
+           type="textarea" :rows="3"></w-input>
 </template>
 <script>
   export default {
@@ -32,7 +34,7 @@ export default {
 <style lang="scss">
 .input-demo {
     .w-input {
-        width: 160px;
+        width: 180px;
     }
 }
 </style>

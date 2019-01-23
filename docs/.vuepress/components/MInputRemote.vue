@@ -32,7 +32,7 @@ export default {
 <style lang="scss">
 .input-demo {
     .w-input {
-        width: 160px;
+        width: 180px;
     }
 }
 </style>
