@@ -80,7 +80,7 @@ export default [
   // CheckboxGroup,
   Select,
   Option,
-  OptionGroup
+  OptionGroup,
   // Form,
   // FormItem,
   Tree,
