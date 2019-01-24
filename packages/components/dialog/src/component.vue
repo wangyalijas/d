@@ -40,7 +40,7 @@
   import emitter from '../../../mixins/emitter';
 
   export default {
-    name: 'ElDialog',
+    name: 'WDialog',
 
     mixins: [Popup, emitter, Migrating],
 
@@ -170,8 +170,8 @@
         }
       },
       updatePopper() {
-        this.broadcast('ElSelectDropdown', 'updatePopper');
-        this.broadcast('ElDropdownMenu', 'updatePopper');
+        this.broadcast('WSelectDropdown', 'updatePopper');
+        this.broadcast('WDropdownMenu', 'updatePopper');
       },
       afterEnter() {
         this.$emit('opened');

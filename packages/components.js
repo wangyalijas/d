@@ -18,7 +18,8 @@ import Button from './components/button'
 import ButtonGroup from './components/button-group'
 import Popover from './components/popover'
 import Pagination from './components/pagination'
-// import Dialog from './components/dialog/index.js'
+import Dialog from './components/dialog/index.js'
+import Message from './components/message/index.js'
 // import Autocomplete from './components/autocomplete/index.js'
 // import Dropdown from './components/dropdown/index.js'
 // import RadioGroup from './components/radio-group/index.js'
@@ -32,7 +33,7 @@ import Pagination from './components/pagination'
 // import Form from './components/form/index.js'
 // import FormItem from './components/form-item/index.js'
 import Tabs from './components/tabs'
-import TabPane from './components/tab-pane'
+import TabPane from './components/tab-pane/index.js'
 // import Tree from './components/tree/index.js'
 // import Progress from './components/progress/index.js'
 // import Spinner from './components/spinner/index.js'
@@ -61,8 +62,9 @@ export default [
   Popover,
   Tabs,
   TabPane,
-  Pagination
-  // Dialog,
+  Pagination,
+  Dialog,
+  Message,
   // Autocomplete,
   // Dropdown,
   // InputNumber,
