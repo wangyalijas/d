@@ -71,15 +71,15 @@
 </template>
 
 <script type="text/jsx">
-  import ElCollapseTransition from '../../../transitions/collapse-transition';
-  import ElCheckbox from '../../checkbox';
+  import WCollapseTransition from '../../../transitions/collapse-transition';
+  import WCheckbox from '../../checkbox';
   import emitter from '../../../mixins/emitter';
   import { getNodeKey } from './model/util';
 
   export default {
-    name: 'ElTreeNode',
+    name: 'WTreeNode',
 
-    componentName: 'ElTreeNode',
+    componentName: 'WTreeNode',
 
     mixins: [emitter],
 
@@ -98,8 +98,8 @@
     },
 
     components: {
-      ElCollapseTransition,
-      ElCheckbox,
+      WCollapseTransition,
+      WCheckbox,
       NodeContent: {
         props: {
           node: {
@@ -212,7 +212,7 @@
       },
 
       handleChildNodeExpand(nodeData, node, instance) {
-        this.broadcast('ElTreeNode', 'tree-node-expand', node);
+        this.broadcast('WTreeNode', 'tree-node-expand', node);
         this.tree.$emit('node-expand', nodeData, node, instance);
       },
 

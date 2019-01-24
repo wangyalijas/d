@@ -37,7 +37,7 @@ import OptionGroup from './components/option-group'
 import Tabs from './components/tabs'
 import TabPane from './components/tab-pane'
 import Cascader from './components/cascader'
-// import Tree from './components/tree'
+import Tree from './components/tree'
 // import Progress from './components/progress'
 // import Spinner from './components/spinner'
 // import Scrollbar from './components/scrollbar'
@@ -82,10 +82,10 @@ export default [
   // CheckboxGroup,
   Select,
   Option,
-  OptionGroup
+  OptionGroup,
   // Form,
   // FormItem,
-  // Tree,
+  Tree
   // Progress,
   // Spinner,
   // Scrollbar
