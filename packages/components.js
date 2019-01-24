@@ -34,7 +34,7 @@ import Message from './components/message/index.js'
 // import FormItem from './components/form-item/index.js'
 import Tabs from './components/tabs'
 import TabPane from './components/tab-pane/index.js'
-// import Tree from './components/tree/index.js'
+import Tree from './components/tree/index.js'
 // import Progress from './components/progress/index.js'
 // import Spinner from './components/spinner/index.js'
 // import Scrollbar from './components/scrollbar/index.js'
@@ -77,7 +77,7 @@ export default [
   // OptionGroup,
   // Form,
   // FormItem,
-  // Tree,
+  Tree,
   // Progress,
   // Spinner,
   // Scrollbar
