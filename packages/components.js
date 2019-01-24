@@ -27,9 +27,9 @@ import Message from './components/message/index.js'
 // import Checkbox from './components/checkbox/index.js'
 // import CheckboxButton from './components/checkbox-button/index.js'
 // import CheckboxGroup from './components/checkbox-group/index.js'
-// import Select from './components/select/index.js'
-// import Option from './components/option/index.js'
-// import OptionGroup from './components/option-group/index.js'
+import Select from './components/select/index.js'
+import Option from './components/option/index.js'
+import OptionGroup from './components/option-group/index.js'
 // import Form from './components/form/index.js'
 // import FormItem from './components/form-item/index.js'
 import Tabs from './components/tabs'
@@ -48,7 +48,6 @@ export default [
   CheckBox,
   CheckBoxButton,
   CheckBoxGroup,
-  Option,
   Breadcrumb,
   BreadcrumbItem,
   Tag,
@@ -60,6 +59,8 @@ export default [
   Button,
   ButtonGroup,
   Popover,
+  Pagination,
+  // Dialog,
   Tabs,
   TabPane,
   Pagination,
@@ -73,8 +74,9 @@ export default [
   // Checkbox,
   // CheckboxButton,
   // CheckboxGroup,
-  // Select,
-  // OptionGroup,
+  Select,
+  Option,
+  OptionGroup
   // Form,
   // FormItem,
   // Tree,
