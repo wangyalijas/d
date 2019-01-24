@@ -31,8 +31,8 @@ import Pagination from './components/pagination'
 // import OptionGroup from './components/option-group/index.js'
 // import Form from './components/form/index.js'
 // import FormItem from './components/form-item/index.js'
-// import Tabs from './components/tabs/index.js'
-// import TabPane from './components/tab-pane/index.js'
+import Tabs from './components/tabs'
+import TabPane from './components/tab-pane'
 // import Tree from './components/tree/index.js'
 // import Progress from './components/progress/index.js'
 // import Spinner from './components/spinner/index.js'
@@ -59,6 +59,8 @@ export default [
   Button,
   ButtonGroup,
   Popover,
+  Tabs,
+  TabPane,
   Pagination
   // Dialog,
   // Autocomplete,
@@ -73,8 +75,6 @@ export default [
   // OptionGroup,
   // Form,
   // FormItem,
-  // Tabs,
-  // TabPane,
   // Tree,
   // Progress,
   // Spinner,

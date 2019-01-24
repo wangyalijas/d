@@ -2,7 +2,7 @@
   import TabNav from './tab-nav';
 
   export default {
-    name: 'ElTabs',
+    name: 'WTabs',
 
     components: {
       TabNav
@@ -58,7 +58,7 @@
       calcPaneInstances() {
         if (this.$slots.default) {
           const paneSlots = this.$slots.default.filter(vnode => vnode.tag &&
-            vnode.componentOptions && vnode.componentOptions.Ctor.options.name === 'ElTabPane');
+            vnode.componentOptions && vnode.componentOptions.Ctor.options.name === 'WTabPane');
           // update indeed
           const panes = paneSlots.map(({ componentInstance }) => componentInstance);
           if (!(panes.length === this.panes.length && panes.every((pane, index) => pane === this.panes[index]))) {
@@ -167,7 +167,7 @@
         </div>
       );
     },
-  
+
     created() {
       if (!this.currentName) {
         this.setCurrentName('0');

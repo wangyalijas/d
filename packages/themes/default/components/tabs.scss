@@ -184,9 +184,8 @@
       }
       &.is-closable {
         &:hover {
-          padding-left: 13px;
-          padding-right: 13px;
-
+          //padding-left: 13px;
+          //padding-right: 13px;
           & .w-icon-close {
             width: 14px;
           }
@@ -314,7 +313,7 @@
         width: 100%;
         text-align: center;
         cursor: pointer;
-  
+
         i {
           transform: rotateZ(90deg);
         }

@@ -12,47 +12,47 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'ElTabPane',
+export default {
+  name: 'WTabPane',
 
-    componentName: 'ElTabPane',
+  componentName: 'WTabPane',
 
-    props: {
-      label: String,
-      labelContent: Function,
-      name: String,
-      closable: Boolean,
-      disabled: Boolean,
-      lazy: Boolean
+  props: {
+    label: String,
+    labelContent: Function,
+    name: String,
+    closable: Boolean,
+    disabled: Boolean,
+    lazy: Boolean
+  },
+
+  data() {
+    return {
+      index: null,
+      loaded: false
+    };
+  },
+
+  computed: {
+    isClosable() {
+      return this.closable || this.$parent.closable;
     },
-
-    data() {
-      return {
-        index: null,
-        loaded: false
-      };
-    },
-
-    computed: {
-      isClosable() {
-        return this.closable || this.$parent.closable;
-      },
-      active() {
-        const active = this.$parent.currentName === (this.name || this.index);
-        if (active) {
-          this.loaded = true;
-        }
-        return active;
-      },
-      paneName() {
-        return this.name || this.index;
+    active() {
+      const active = this.$parent.currentName === (this.name || this.index);
+      if (active) {
+        this.loaded = true;
       }
+      return active;
     },
-
-    watch: {
-      label() {
-        this.$parent.$forceUpdate();
-      }
+    paneName() {
+      return this.name || this.index;
     }
-  };
+  },
+
+  watch: {
+    label() {
+      this.$parent.$forceUpdate();
+    }
+  }
+};
 </script>
