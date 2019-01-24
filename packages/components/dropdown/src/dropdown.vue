@@ -2,8 +2,8 @@
   import Clickoutside from '../../../utils/clickoutside';
   import Emitter from '../../../mixins/emitter';
   import Migrating from '../../../mixins/migrating';
-  import ElButton from '../../button';
-  import ElButtonGroup from '../../button-group';
+  import WButton from '../../button';
+  import WButtonGroup from '../../button-group';
   import { generateId } from '../../../utils/util';
 
   export default {
@@ -16,8 +16,8 @@
     directives: { Clickoutside },
 
     components: {
-      ElButton,
-      ElButtonGroup
+      WButton,
+      WButtonGroup
     },
 
     provide() {
@@ -62,10 +62,10 @@
       return {
         timeout: null,
         visible: false,
-        triggerElm: null,
+        triggerWm: null,
         menuItems: null,
         menuItemsArray: null,
-        dropdownElm: null,
+        dropdownWm: null,
         focusing: false,
         listId: `dropdown-menu-${generateId()}`
       };
@@ -85,7 +85,7 @@
 
     watch: {
       visible(val) {
-        this.broadcast('ElDropdownMenu', 'visible', val);
+        this.broadcast('WDropdownMenu', 'visible', val);
         this.$emit('visible-change', val);
       },
       focusing(val) {
@@ -109,23 +109,23 @@
         };
       },
       show() {
-        if (this.triggerElm.disabled) return;
+        if (this.triggerWm.disabled) return;
         clearTimeout(this.timeout);
         this.timeout = setTimeout(() => {
           this.visible = true;
         }, this.trigger === 'click' ? 0 : this.showTimeout);
       },
       hide() {
-        if (this.triggerElm.disabled) return;
+        if (this.triggerWm.disabled) return;
         this.removeTabindex();
-        this.resetTabindex(this.triggerElm);
+        this.resetTabindex(this.triggerWm);
         clearTimeout(this.timeout);
         this.timeout = setTimeout(() => {
           this.visible = false;
         }, this.trigger === 'click' ? 0 : this.hideTimeout);
       },
       handleClick() {
-        if (this.triggerElm.disabled) return;
+        if (this.triggerWm.disabled) return;
         if (this.visible) {
           this.hide();
         } else {
@@ -165,14 +165,14 @@
           ev.preventDefault();
           ev.stopPropagation();
         } else if (keyCode === 13) { // enter选中
-          this.triggerElm.focus();
+          this.triggerWm.focus();
           target.click();
           if (this.hideOnClick) { // click关闭
             this.visible = false;
           }
         } else if ([9, 27].indexOf(keyCode) > -1) { // tab // esc
           this.hide();
-          this.triggerElm.focus();
+          this.triggerWm.focus();
         }
         return;
       },
@@ -181,53 +181,53 @@
         ele.setAttribute('tabindex', '0'); // 下次期望的聚焦元素
       },
       removeTabindex() {
-        this.triggerElm.setAttribute('tabindex', '-1');
+        this.triggerWm.setAttribute('tabindex', '-1');
         this.menuItemsArray.forEach((item) => {
           item.setAttribute('tabindex', '-1');
         });
       },
       initAria() {
-        this.dropdownElm.setAttribute('id', this.listId);
-        this.triggerElm.setAttribute('aria-haspopup', 'list');
-        this.triggerElm.setAttribute('aria-controls', this.listId);
-        this.menuItems = this.dropdownElm.querySelectorAll("[tabindex='-1']");
+        this.dropdownWm.setAttribute('id', this.listId);
+        this.triggerWm.setAttribute('aria-haspopup', 'list');
+        this.triggerWm.setAttribute('aria-controls', this.listId);
+        this.menuItems = this.dropdownWm.querySelectorAll("[tabindex='-1']");
         this.menuItemsArray = Array.prototype.slice.call(this.menuItems);
 
         if (!this.splitButton) { // 自定义
-          this.triggerElm.setAttribute('role', 'button');
-          this.triggerElm.setAttribute('tabindex', '0');
-          this.triggerElm.setAttribute('class', (this.triggerElm.getAttribute('class') || '') + ' w-dropdown-selfdefine'); // 控制
+          this.triggerWm.setAttribute('role', 'button');
+          this.triggerWm.setAttribute('tabindex', '0');
+          this.triggerWm.setAttribute('class', (this.triggerWm.getAttribute('class') || '') + ' w-dropdown-selfdefine'); // 控制
         }
       },
       initEvent() {
         let { trigger, show, hide, handleClick, splitButton, handleTriggerKeyDown, handleItemKeyDown } = this;
-        this.triggerElm = splitButton
+        this.triggerWm = splitButton
           ? this.$refs.trigger.$el
           : this.$slots.default[0].elm;
 
-        let dropdownElm = this.dropdownElm = this.$slots.dropdown[0].elm;
+        let dropdownWm = this.dropdownWm = this.$slots.dropdown[0].elm;
 
-        this.triggerElm.addEventListener('keydown', handleTriggerKeyDown); // triggerElm keydown
-        dropdownElm.addEventListener('keydown', handleItemKeyDown, true); // item keydown
+        this.triggerWm.addEventListener('keydown', handleTriggerKeyDown); // triggerWm keydown
+        dropdownWm.addEventListener('keydown', handleItemKeyDown, true); // item keydown
         // 控制自定义元素的样式
         if (!splitButton) {
-          this.triggerElm.addEventListener('focus', () => {
+          this.triggerWm.addEventListener('focus', () => {
             this.focusing = true;
           });
-          this.triggerElm.addEventListener('blur', () => {
+          this.triggerWm.addEventListener('blur', () => {
             this.focusing = false;
           });
-          this.triggerElm.addEventListener('click', () => {
+          this.triggerWm.addEventListener('click', () => {
             this.focusing = false;
           });
         }
         if (trigger === 'hover') {
-          this.triggerElm.addEventListener('mouseenter', show);
-          this.triggerElm.addEventListener('mouseleave', hide);
-          dropdownElm.addEventListener('mouseenter', show);
-          dropdownElm.addEventListener('mouseleave', hide);
+          this.triggerWm.addEventListener('mouseenter', show);
+          this.triggerWm.addEventListener('mouseleave', hide);
+          dropdownWm.addEventListener('mouseenter', show);
+          dropdownWm.addEventListener('mouseleave', hide);
         } else if (trigger === 'click') {
-          this.triggerElm.addEventListener('click', handleClick);
+          this.triggerWm.addEventListener('click', handleClick);
         }
       },
       handleMenuItemClick(command, instance) {
@@ -237,7 +237,7 @@
         this.$emit('command', command, instance);
       },
       focus() {
-        this.triggerElm.focus && this.triggerElm.focus();
+        this.triggerWm.focus && this.triggerWm.focus();
       }
     },
 
@@ -249,7 +249,7 @@
         hide();
       };
 
-      let triggerElm = !splitButton
+      let triggerWm = !splitButton
         ? this.$slots.default
         : (<w-button-group>
           <w-button type={type} size={dropdownSize} nativeOn-click={handleMainButtonClick}>
@@ -262,7 +262,7 @@
 
       return (
         <div class="w-dropdown" v-clickoutside={hide}>
-          {triggerElm}
+          {triggerWm}
           {this.$slots.dropdown}
         </div>
       );

@@ -28,7 +28,7 @@
 
     methods: {
       handleClick(e) {
-        this.dispatch('ElDropdown', 'menu-item-click', [this.command, this]);
+        this.dispatch('WDropdown', 'menu-item-click', [this.command, this]);
       }
     }
   };
