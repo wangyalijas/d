@@ -1,8 +1,7 @@
-import ElDropdownItem from '../dropdown/src/dropdown-item';
+import WDropdownItem from '../dropdown/src/dropdown-item'
 
-/* istanbul ignore next */
-ElDropdownItem.install = function(Vue) {
-  Vue.component(ElDropdownItem.name, ElDropdownItem);
-};
+WDropdownItem.install = (Vue) => {
+  Vue.component(WDropdownItem.name, WDropdownItem)
+}
 
-export default ElDropdownItem;
+export default WDropdownItem

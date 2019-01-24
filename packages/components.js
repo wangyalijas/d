@@ -21,15 +21,17 @@ import Pagination from './components/pagination'
 import Dialog from './components/dialog/index.js'
 import Message from './components/message/index.js'
 // import Autocomplete from './components/autocomplete/index.js'
-// import Dropdown from './components/dropdown/index.js'
+import Dropdown from './components/dropdown'
+import DropdownMenu from './components/dropdown-menu'
+import DropdownItem from './components/dropdown-item'
 // import RadioGroup from './components/radio-group/index.js'
 // import RadioButton from './components/radio-button/index.js'
 // import Checkbox from './components/checkbox/index.js'
 // import CheckboxButton from './components/checkbox-button/index.js'
 // import CheckboxGroup from './components/checkbox-group/index.js'
-// import Select from './components/select/index.js'
-// import Option from './components/option/index.js'
-// import OptionGroup from './components/option-group/index.js'
+import Select from './components/select/index.js'
+import Option from './components/option/index.js'
+import OptionGroup from './components/option-group/index.js'
 // import Form from './components/form/index.js'
 // import FormItem from './components/form-item/index.js'
 import Tabs from './components/tabs'
@@ -48,7 +50,6 @@ export default [
   CheckBox,
   CheckBoxButton,
   CheckBoxGroup,
-  Option,
   Breadcrumb,
   BreadcrumbItem,
   Tag,
@@ -60,6 +61,10 @@ export default [
   Button,
   ButtonGroup,
   Popover,
+  Pagination,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
   Tabs,
   TabPane,
   Pagination,
@@ -73,8 +78,9 @@ export default [
   // Checkbox,
   // CheckboxButton,
   // CheckboxGroup,
-  // Select,
-  // OptionGroup,
+  Select,
+  Option,
+  OptionGroup
   // Form,
   // FormItem,
   Tree,
