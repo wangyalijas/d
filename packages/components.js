@@ -41,6 +41,7 @@ import TableColumn from './components/table-column'
 // import Form from './components/form'
 // import FormItem from './components/form-item'
 import Tabs from './components/tabs'
+import Transfer from './components/transfer'
 import TabPane from './components/tab-pane'
 import Cascader from './components/cascader'
 import Tree from './components/tree'
@@ -84,6 +85,7 @@ export default [
   Pagination,
   Dialog,
   Message,
+  Transfer,
   // Autocomplete,
   // Dropdown,
   // InputNumber,
