@@ -4,10 +4,12 @@
 import './themes/fonts/iconfont'
 import components from './components'
 import methods from './methods'
+console.log(methods.Loading)
 const install = (Vue) => {
   if (install.installed) return
   components.forEach(component => Vue.component(component.name, component))
   let {Loading, Message, MessageBox, Notification} = methods
+  Vue.use(Loading.directive)
   Vue.prototype.$loading = Loading.service
   Vue.prototype.$msgbox = MessageBox
   Vue.prototype.$alert = MessageBox.alert

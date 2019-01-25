@@ -48,6 +48,7 @@ import TableColumn from './components/table-column'
 // import Form from './components/form'
 // import FormItem from './components/form-item'
 import Tabs from './components/tabs'
+import Loading from './components/loading'
 import Transfer from './components/transfer'
 import PatientList from './components/patient-list'
 import TabPane from './components/tab-pane'
@@ -95,6 +96,7 @@ export default [
   Dialog,
   Message,
   Transfer,
+  Loading,
   PatientList,
   // Autocomplete,
   // Dropdown,
