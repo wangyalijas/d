@@ -1,6 +1,7 @@
 import WDropdown from './src/dropdown'
 
-WDropdown.install = (Vue) => {
+/* istanbul ignore next */
+WDropdown.install = function (Vue) {
   Vue.component(WDropdown.name, WDropdown)
 }
 

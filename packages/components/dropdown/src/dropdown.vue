@@ -8,24 +8,18 @@
 
   export default {
     name: 'WDropdown',
-
     componentName: 'WDropdown',
-
     mixins: [Emitter, Migrating],
-
     directives: { Clickoutside },
-
     components: {
       WButton,
       WButtonGroup
     },
-
     provide() {
       return {
         dropdown: this
       };
     },
-
     props: {
       trigger: {
         type: String,

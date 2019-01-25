@@ -1,6 +1,7 @@
 import WDropdownMenu from '../dropdown/src/dropdown-menu'
 
-WDropdownMenu.install = (Vue) => {
+/* istanbul ignore next */
+WDropdownMenu.install = function (Vue) {
   Vue.component(WDropdownMenu.name, WDropdownMenu)
 }
 

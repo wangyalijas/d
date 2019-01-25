@@ -44,8 +44,8 @@
     },
 
     mounted() {
-      this.$parent.popperWm = this.popperWm = this.$el;
-      this.referenceWm = this.$parent.$el;
+      this.$parent.popperElm = this.popperElm = this.$el;
+      this.referenceElm = this.$parent.$el;
     },
 
     watch: {
