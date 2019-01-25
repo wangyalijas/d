@@ -1,7 +1,8 @@
 <template>
-  <section class="table-demo">
-    <coding-box :code="code" description="当w-table元素中注入data对象数组后，在w-table-column中用prop属性来对应对象中的键名即可填入数据，用label属性来定义表格的列名。可以使用width属性来定义列宽。">
-      <w-table :data="tableData" style="width: 100%">
+  <section class="table-style-demo">
+    <coding-box :code="code" description="通过设置 max-height 属性为 Table 指定最大高度。此时若表格所需的高度大于最大高度，则会显示一个滚动条。">
+      <section class="demo-wrapper">
+      <w-table :data="tableData" style="width: 100%" max-height="250">
         <w-table-column prop="date" label="日期" width="180">
         </w-table-column>
         <w-table-column prop="name" label="姓名" width="180">
@@ -9,6 +10,7 @@
         <w-table-column prop="address" label="地址">
         </w-table-column>
       </w-table>
+      </section>
     </coding-box>
   </section>
 </template>
@@ -18,7 +20,7 @@ export default {
     data () {
         return {
           code: `<template>
-  <w-table :data="tableData" style="width: 100%">
+  <w-table :data="tableData" style="width: 100%" max-height="250">
     <w-table-column prop="date" label="日期" width="180">
     </w-table-column>
     <w-table-column prop="name" label="姓名" width="180">
@@ -62,13 +64,31 @@ export default {
             address: '合肥市蜀山区长江西路233号'
           }]
         }
+    },
+    methods: {
     }
 }
 </script>
 <style lang="scss">
-.table-demo {
+.table-style-demo {
   table {
     margin: 0;
+  }
+  .demo-wrapper {
+    margin-bottom: 10px;
+    h1.label {
+      margin: 0 0 15px 0;
+      padding: 10px 0;
+      font-size: 18px;
+      border-bottom: 1px dashed #eee;
+    }
+    .w-table .warning-row {
+    background: oldlace;
+  }
+
+  .w-table .success-row {
+    background: #f0f9eb;
+  }
   }
 }
 </style>
