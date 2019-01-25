@@ -48,13 +48,14 @@ import TableColumn from './components/table-column'
 // import Form from './components/form'
 // import FormItem from './components/form-item'
 import Tabs from './components/tabs'
+import Transfer from './components/transfer'
 import TabPane from './components/tab-pane'
 import Cascader from './components/cascader'
 import Tree from './components/tree'
 import DatePicker from './components/date-picker'
 // import Progress from './components/progress'
 // import Spinner from './components/spinner'
-// import Scrollbar from './components/scrollbar'
+import Scrollbar from './components/scrollbar'
 
 export default [
   Table,
@@ -92,6 +93,7 @@ export default [
   Pagination,
   Dialog,
   Message,
+  Transfer,
   // Autocomplete,
   // Dropdown,
   // InputNumber,
@@ -106,8 +108,9 @@ export default [
   // Form,
   // FormItem,
   Tree,
-  DatePicker
+  DatePicker,
+  Tree,
   // Progress,
   // Spinner,
-  // Scrollbar
+  Scrollbar
 ]

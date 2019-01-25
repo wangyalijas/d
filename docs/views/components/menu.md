@@ -4,7 +4,7 @@
 
 <m-menu />
 
-## 换肤
+## 样式设置
 
 <m-menu-style />
 
