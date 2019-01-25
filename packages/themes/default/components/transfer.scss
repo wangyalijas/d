@@ -1,10 +1,10 @@
 @import "../mixins/mixins";
 @import "../mixins/utils";
 @import "../core/var";
-@import "input";
-@import "button";
-@import "checkbox";
-@import "checkbox-group";
+@import "./input";
+@import "./button";
+@import "./checkbox";
+@import "./checkbox-group";
 
 @include b(transfer) {
   font-size: $--font-size-base;

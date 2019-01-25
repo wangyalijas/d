@@ -40,10 +40,10 @@
       </w-checkbox-group>
       <p
         class="w-transfer-panel__empty"
-        v-show="hasNoMatch">{{ t('el.transfer.noMatch') }}</p>
+        v-show="hasNoMatch">{{ t('w.transfer.noMatch') }}</p>
       <p
         class="w-transfer-panel__empty"
-        v-show="data.length === 0 && !hasNoMatch">{{ t('el.transfer.noData') }}</p>
+        v-show="data.length === 0 && !hasNoMatch">{{ t('w.transfer.noData') }}</p>
     </div>
     <p class="w-transfer-panel__footer" v-if="hasFooter">
       <slot></slot>
@@ -74,7 +74,7 @@
         },
         render(h) {
           const getParent = vm => {
-            if (vm.$options.componentName === 'ElTransferPanel') {
+            if (vm.$options.componentName === 'WTransferPanel') {
               return vm;
             } else if (vm.$parent) {
               return getParent(vm.$parent);
