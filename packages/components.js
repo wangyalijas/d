@@ -18,31 +18,41 @@ import Button from './components/button'
 import ButtonGroup from './components/button-group'
 import Popover from './components/popover'
 import Pagination from './components/pagination'
-import Dialog from './components/dialog/index.js'
-import Message from './components/message/index.js'
-// import Autocomplete from './components/autocomplete/index.js'
+import Dialog from './components/dialog'
+import Message from './components/message'
+// import Autocomplete from './components/autocomplete'
 import Dropdown from './components/dropdown'
 import DropdownMenu from './components/dropdown-menu'
 import DropdownItem from './components/dropdown-item'
-// import RadioGroup from './components/radio-group/index.js'
-// import RadioButton from './components/radio-button/index.js'
-// import Checkbox from './components/checkbox/index.js'
-// import CheckboxButton from './components/checkbox-button/index.js'
-// import CheckboxGroup from './components/checkbox-group/index.js'
-import Select from './components/select/index.js'
-import Option from './components/option/index.js'
-import OptionGroup from './components/option-group/index.js'
-// import Form from './components/form/index.js'
-// import FormItem from './components/form-item/index.js'
+import Menu from './components/menu'
+import Submenu from './components/submenu'
+import MenuItem from './components/menu-item'
+import MenuItemGroup from './components/menu-item-group'
+// import RadioGroup from './components/radio-group'
+// import RadioButton from './components/radio-button'
+// import Checkbox from './components/checkbox'
+// import CheckboxButton from './components/checkbox-button'
+// import CheckboxGroup from './components/checkbox-group'
+import Select from './components/select'
+import Option from './components/option'
+import OptionGroup from './components/option-group'
+import Table from './components/table'
+import TableColumn from './components/table-column'
+// import Form from './components/form'
+// import FormItem from './components/form-item'
 import Tabs from './components/tabs'
-import TabPane from './components/tab-pane/index.js'
-import Tree from './components/tree/index.js'
-// import Progress from './components/progress/index.js'
-// import Spinner from './components/spinner/index.js'
-// import Scrollbar from './components/scrollbar/index.js'
+import TabPane from './components/tab-pane'
+import Cascader from './components/cascader'
+import Tree from './components/tree'
+// import Progress from './components/progress'
+// import Spinner from './components/spinner'
+// import Scrollbar from './components/scrollbar'
 
 export default [
+  Table,
+  TableColumn,
   Input,
+  Cascader,
   Switch,
   Radio,
   RadioButton,
@@ -65,6 +75,10 @@ export default [
   Dropdown,
   DropdownItem,
   DropdownMenu,
+  Menu,
+  MenuItem,
+  MenuItemGroup,
+  Submenu,
   Tabs,
   TabPane,
   Pagination,
@@ -83,7 +97,7 @@ export default [
   OptionGroup,
   // Form,
   // FormItem,
-  Tree,
+  Tree
   // Progress,
   // Spinner,
   // Scrollbar

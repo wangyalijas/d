@@ -17,11 +17,11 @@
 <script>
   import Popper from '../../../utils/vue-popper'
   import Emitter from '../../../mixins/emitter'
-  import ElScrollbar from '../../scrollbar'
+  import WScrollbar from '../../scrollbar'
   export default {
-    components: { ElScrollbar },
+    components: { WScrollbar },
     mixins: [Popper, Emitter],
-    componentName: 'ElAutocompleteSuggestions',
+    componentName: 'WAutocompleteSuggestions',
     data() {
       return {
         parent: this.$parent,
@@ -40,7 +40,7 @@
     },
     methods: {
       select(item) {
-        this.dispatch('ElAutocomplete', 'item-click', item)
+        this.dispatch('WAutocomplete', 'item-click', item)
       }
     },
     updated() {

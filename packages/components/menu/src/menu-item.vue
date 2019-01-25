@@ -14,7 +14,7 @@
     @mouseleave="onMouseLeave"
   >
     <w-tooltip
-      v-if="parentMenu.$options.componentName === 'ElMenu' && rootMenu.collapse && $slots.title"
+      v-if="parentMenu.$options.componentName === 'WMenu' && rootMenu.collapse && $slots.title"
       effect="dark"
       placement="right">
       <div slot="content"><slot name="title"></slot></div>
@@ -30,17 +30,17 @@
 </template>
 <script>
   import Menu from './menu-mixin';
-  import ElTooltip from '../../tooltip';
+  import WTooltip from '../../tooltip';
   import Emitter from '../../../mixins/emitter';
 
   export default {
-    name: 'ElMenuItem',
+    name: 'WMenuItem',
 
-    componentName: 'ElMenuItem',
+    componentName: 'WMenuItem',
 
     mixins: [Menu, Emitter],
 
-    components: { ElTooltip },
+    components: { WTooltip },
 
     props: {
       index: {
@@ -95,7 +95,7 @@
       },
       handleClick() {
         if (!this.disabled) {
-          this.dispatch('ElMenu', 'item-click', this);
+          this.dispatch('WMenu', 'item-click', this);
           this.$emit('click', this);
         }
       }

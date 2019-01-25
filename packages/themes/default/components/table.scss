@@ -3,7 +3,6 @@
 @import "./tag";
 @import "./tooltip";
 @import "../core/variable";
-
 @include b(table) {
   position: relative;
   overflow: hidden;

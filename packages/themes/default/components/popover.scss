@@ -1,7 +1,6 @@
 @import "../mixins/mixins";
 @import "../mixins/utils";
 @import "../core/variable";
-@import "../common/var";
 @import "./popper";
 
 @include b(popover) {
