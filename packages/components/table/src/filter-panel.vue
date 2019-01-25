@@ -18,8 +18,8 @@
       <div class="w-table-filter__bottom">
         <button @click="handleConfirm"
           :class="{ 'is-disabled': filteredValue.length === 0 }"
-          :disabled="filteredValue.length === 0">{{ t('el.table.confirmFilter') }}</button>
-        <button @click="handleReset">{{ t('el.table.resetFilter') }}</button>
+          :disabled="filteredValue.length === 0">{{ t('w.table.confirmFilter') }}</button>
+        <button @click="handleReset">{{ t('w.table.resetFilter') }}</button>
       </div>
     </div>
     <div
@@ -30,7 +30,7 @@
       <ul class="w-table-filter__list">
         <li class="w-table-filter__list-item"
             :class="{ 'is-active': filterValue === undefined || filterValue === null }"
-            @click="handleSelect(null)">{{ t('el.table.clearFilter') }}</li>
+            @click="handleSelect(null)">{{ t('w.table.clearFilter') }}</li>
         <li class="w-table-filter__list-item"
             v-for="filter in filters"
             :label="filter.value"
@@ -77,8 +77,8 @@
         <div class="w-table-filter__content">
         </div>
         <div class="w-table-filter__bottom">
-          <button on-click={ this.handleConfirm }>{ this.t('el.table.confirmFilter') }</button>
-          <button on-click={ this.handleReset }>{ this.t('el.table.resetFilter') }</button>
+          <button on-click={ this.handleConfirm }>{ this.t('w.table.confirmFilter') }</button>
+          <button on-click={ this.handleReset }>{ this.t('w.table.resetFilter') }</button>
         </div>
       </div>);
     },

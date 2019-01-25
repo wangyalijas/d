@@ -47,7 +47,7 @@ import Cascader from './components/cascader'
 import Tree from './components/tree'
 // import Progress from './components/progress'
 // import Spinner from './components/spinner'
-// import Scrollbar from './components/scrollbar'
+import Scrollbar from './components/scrollbar'
 
 export default [
   Table,
@@ -99,8 +99,8 @@ export default [
   OptionGroup,
   // Form,
   // FormItem,
-  Tree
+  Tree,
   // Progress,
   // Spinner,
-  // Scrollbar
+  Scrollbar
 ]

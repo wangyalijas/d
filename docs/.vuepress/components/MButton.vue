@@ -2,8 +2,8 @@
   <section class="button-demo">
     <coding-box :code="code">
       <section class="demo-wrapper">
-        <h1 class="label">默认样式</h1>
-        <w-button>默认按钮</w-button>
+        <h1 class="label"># 默认样式</h1>
+        <w-button># 默认按钮</w-button>
         <w-button type="primary">主要按钮</w-button>
         <w-button type="success">成功按钮</w-button>
         <w-button type="info">信息按钮</w-button>
@@ -11,7 +11,7 @@
         <w-button type="danger">危险按钮</w-button>
       </section>
       <section class="demo-wrapper">
-        <h1 class="label">轻量按钮 (plain)</h1>
+        <h1 class="label"># 轻量按钮 (plain)</h1>
         <w-button plain>默认按钮</w-button>
         <w-button type="primary" plain>主要按钮</w-button>
         <w-button type="success" plain>成功按钮</w-button>
@@ -20,7 +20,7 @@
         <w-button type="danger" plain>危险按钮</w-button>
       </section>
       <section class="demo-wrapper">
-        <h1 class="label">圆角按钮 (round)</h1>
+        <h1 class="label"># 圆角按钮 (round)</h1>
         <w-button round>默认按钮</w-button>
         <w-button type="primary" round>主要按钮</w-button>
         <w-button type="success" round>成功按钮</w-button>
@@ -29,7 +29,7 @@
         <w-button type="danger" round>危险按钮</w-button>
       </section>
       <section class="demo-wrapper">
-        <h1 class="label">圆形按钮 (circle)</h1>
+        <h1 class="label"># 圆形按钮 (circle)</h1>
         <w-button icon="w-icon-search" circle></w-button>
         <w-button type="primary" icon="w-icon-edit" circle></w-button>
         <w-button type="success" icon="w-icon-check" circle></w-button>
@@ -96,8 +96,7 @@ export default {
     h1.label {
       margin: 0 0 15px 0;
       padding: 10px 0;
-      font-size: 16px;
-      font-weight: normal;
+      font-size: 18px;
       border-bottom: 1px dashed #eee;
     }
   }
