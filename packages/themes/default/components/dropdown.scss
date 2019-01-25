@@ -24,7 +24,6 @@
 
     &::before {
       $gap: 5px;
-
       content: '';
       position: absolute;
       display: block;
@@ -50,14 +49,13 @@
     font-size: 12px;
     margin: 0 3px;
   }
-
-  .w-dropdown-selfdefine { // 自定义
-    &:focus:active, &:focus:not(.focusing) {
-      outline-width: 0;
-    }
+}
+.w-dropdown-selfdefine { // 自定义
+  cursor: pointer;
+  &:focus:active, &:focus:not(.focusing) {
+    outline-width: 0;
   }
 }
-
 @include b(dropdown-menu) {
   position: absolute;
   top: 0;
