@@ -21,7 +21,7 @@
           <div class="w-date-picker__time-header" v-if="showTime">
             <span class="w-date-picker__editor-wrap">
               <w-input
-                :placeholder="t('el.datepicker.swectDate')"
+                :placeholder="t('el.datepicker.selectDate')"
                 :value="visibleDate"
                 size="small"
                 @input="val => userInputDate = val"
@@ -126,8 +126,8 @@
           type="text"
           class="w-picker-panel__link-btn"
           @click="changeToNow"
-          v-show="swectionMode !== 'dates'">
-          {{ t('el.datepicker.now') }}
+          v-show="selectionMode !== 'dates'">
+          {{ t('w.datepicker.now') }}
         </w-button>
         <w-button
           plain

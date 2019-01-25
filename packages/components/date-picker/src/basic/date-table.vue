@@ -32,7 +32,15 @@
 </template>
 
 <script>
-import { getFirstDayOfMonth, getDayCountOfMonth, getWeekNumber, getStartDateOfMonth, prevDate, nextDate, isDate, clearTime as _clearTime} from '../util'
+import {
+  getFirstDayOfMonth,
+  getDayCountOfMonth,
+  getWeekNumber,
+  getStartDateOfMonth,
+  prevDate,
+  nextDate,
+  isDate,
+  clearTime as _clearTime} from '../util'
 import Locale from '../../../../mixins/locale'
 import { arrayFindIndex, arrayFind, coerceTruthyValueToArray } from '../../../../utils/util'
 
@@ -47,9 +55,6 @@ const getDateTimestamp = function (time) {
   }
 }
 
-// remove the first element that satisfies `pred` from arr
-// return a new array if modification occurs
-// return the original array otherwise
 const removeFromArray = function (arr, pred) {
   const idx = typeof pred === 'function' ? arrayFindIndex(arr, pred) : arr.indexOf(pred)
   return idx >= 0 ? [...arr.slice(0, idx), ...arr.slice(idx + 1)] : arr
@@ -69,7 +74,6 @@ export default {
 
     defaultValue: {
       validator (val) {
-        // either: null, valid Date object, Array of valid Date objects
         return val === null || isDate(val) || (Array.isArray(val) && val.every(isDate))
       }
     },

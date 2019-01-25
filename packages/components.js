@@ -32,7 +32,6 @@ import DropdownItem from './components/dropdown-item'
 import Select from './components/select/index.js'
 import Option from './components/option/index.js'
 import OptionGroup from './components/option-group/index.js'
-import DatePicker from './components/date-picker/index.js'
 // import Form from './components/form/index.js'
 // import FormItem from './components/form-item/index.js'
 import Menu from './components/menu'
@@ -52,6 +51,7 @@ import Tabs from './components/tabs'
 import TabPane from './components/tab-pane'
 import Cascader from './components/cascader'
 import Tree from './components/tree'
+import DatePicker from './components/date-picker'
 // import Progress from './components/progress'
 // import Spinner from './components/spinner'
 // import Scrollbar from './components/scrollbar'
@@ -103,10 +103,10 @@ export default [
   Select,
   Option,
   OptionGroup,
-  DatePicker,
   // Form,
   // FormItem,
-  Tree
+  Tree,
+  DatePicker
   // Progress,
   // Spinner,
   // Scrollbar

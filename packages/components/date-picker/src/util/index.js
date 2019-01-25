@@ -1,5 +1,4 @@
 import { t } from '../../../../locale'
-// const dateUtil = require('../../../../utils/date.js')
 // import dateUtil from '../../../../utils/date.js'
 import dateUtil from 'fecha/src/fecha.js'
 

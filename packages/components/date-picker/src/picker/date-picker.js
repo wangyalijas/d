@@ -11,7 +11,7 @@ const getPanel = function (type) {
 
 export default {
   mixins: [Picker],
-
+  name: 'WDatePicker',
   props: {
     type: {
       type: String,
