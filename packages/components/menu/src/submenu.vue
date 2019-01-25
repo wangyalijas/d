@@ -1,5 +1,5 @@
 <script>
-  import ElCollapseTransition from '../../../transitions/collapse-transition';
+  import WCollapseTransition from '../../../transitions/collapse-transition';
   import menuMixin from './menu-mixin';
   import Emitter from '../../../mixins/emitter';
   import Popper from '../../../utils/vue-popper';
@@ -21,13 +21,13 @@
   };
 
   export default {
-    name: 'ElSubmenu',
+    name: 'WSubmenu',
 
-    componentName: 'ElSubmenu',
+    componentName: 'WSubmenu',
 
     mixins: [menuMixin, Emitter, poperMixins],
 
-    components: { ElCollapseTransition },
+    components: { WCollapseTransition },
 
     props: {
       index: {
@@ -137,7 +137,7 @@
         let isFirstLevel = true;
         let parent = this.$parent;
         while (parent && parent !== this.rootMenu) {
-          if (['ElSubmenu', 'ElMenuItemGroup'].indexOf(parent.$options.componentName) > -1) {
+          if (['WSubmenu', 'WMenuItemGroup'].indexOf(parent.$options.componentName) > -1) {
             isFirstLevel = false;
             break;
           } else {
@@ -176,7 +176,7 @@
         ) {
           return;
         }
-        this.dispatch('ElMenu', 'submenu-click', this);
+        this.dispatch('WMenu', 'submenu-click', this);
       },
       handleMouseenter() {
         const { rootMenu, disabled } = this;
@@ -187,7 +187,7 @@
         ) {
           return;
         }
-        this.dispatch('ElSubmenu', 'mouse-enter-child');
+        this.dispatch('WSubmenu', 'mouse-enter-child');
         clearTimeout(this.timeout);
         this.timeout = setTimeout(() => {
           this.rootMenu.openMenu(this.index, this.indexPath);
@@ -201,7 +201,7 @@
         ) {
           return;
         }
-        this.dispatch('ElSubmenu', 'mouse-leave-child');
+        this.dispatch('WSubmenu', 'mouse-leave-child');
         clearTimeout(this.timeout);
         this.timeout = setTimeout(() => {
           !this.mouseInChild && this.rootMenu.closeMenu(this.index);

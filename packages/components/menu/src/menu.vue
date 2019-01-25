@@ -5,7 +5,7 @@
   import { addClass, removeClass, hasClass } from '../../../utils/dom';
 
   export default {
-    name: 'ElMenu',
+    name: 'WMenu',
 
     render (h) {
       const component = (
@@ -34,7 +34,7 @@
       }
     },
 
-    componentName: 'ElMenu',
+    componentName: 'WMenu',
 
     mixins: [emitter, Migrating],
 
@@ -149,7 +149,7 @@
 
       collapse(value) {
         if (value) this.openedMenus = [];
-        this.broadcast('ElSubmenu', 'toggle-collapse', value);
+        this.broadcast('WSubmenu', 'toggle-collapse', value);
       }
     },
     methods: {
