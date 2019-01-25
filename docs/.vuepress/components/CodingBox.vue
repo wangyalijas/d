@@ -10,7 +10,7 @@
           <p v-if="description" v-text="description" class="code-description"></p>
           <pre><code v-text="code" ref="code"></code></pre>
         </div>
-        <h3 v-text="`${showCode ? '隐藏' : '查看'}代码`"
+        <h3 v-text="`${showCode ? '隐藏' : '查看'}代码 < />`"
             class="toggle-collapse--button" @click="toggleCodingBox"></h3>
       </section>
     </section>
@@ -111,6 +111,7 @@ export default {
         cursor: pointer;
         &:hover {
           color: $primary-color;
+          background-color: #f6f8fa;
         }
       }
     }
