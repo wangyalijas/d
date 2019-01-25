@@ -116,7 +116,10 @@ module.exports = {
                 ]
               }, {
                 title: 'Business',
-                collapsable: false
+                collapsable: false,
+                children: [
+                  'patient-list'
+                ]
             }
           ]
       },

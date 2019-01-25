@@ -24,6 +24,16 @@ import Message from './components/message'
 import Dropdown from './components/dropdown'
 import DropdownMenu from './components/dropdown-menu'
 import DropdownItem from './components/dropdown-item'
+// import RadioGroup from './components/radio-group/index.js'
+// import RadioButton from './components/radio-button/index.js'
+// import Checkbox from './components/checkbox/index.js'
+// import CheckboxButton from './components/checkbox-button/index.js'
+// import CheckboxGroup from './components/checkbox-group/index.js'
+import Select from './components/select/index.js'
+import Option from './components/option/index.js'
+import OptionGroup from './components/option-group/index.js'
+// import Form from './components/form/index.js'
+// import FormItem from './components/form-item/index.js'
 import Menu from './components/menu'
 import Submenu from './components/submenu'
 import MenuItem from './components/menu-item'
@@ -33,17 +43,17 @@ import MenuItemGroup from './components/menu-item-group'
 // import Checkbox from './components/checkbox'
 // import CheckboxButton from './components/checkbox-button'
 // import CheckboxGroup from './components/checkbox-group'
-import Select from './components/select'
-import Option from './components/option'
-import OptionGroup from './components/option-group'
 import Table from './components/table'
 import TableColumn from './components/table-column'
 // import Form from './components/form'
 // import FormItem from './components/form-item'
 import Tabs from './components/tabs'
+import Transfer from './components/transfer'
+import PatientList from './components/patient-list'
 import TabPane from './components/tab-pane'
 import Cascader from './components/cascader'
 import Tree from './components/tree'
+import DatePicker from './components/date-picker'
 // import Progress from './components/progress'
 // import Spinner from './components/spinner'
 import Scrollbar from './components/scrollbar'
@@ -84,6 +94,8 @@ export default [
   Pagination,
   Dialog,
   Message,
+  Transfer,
+  PatientList,
   // Autocomplete,
   // Dropdown,
   // InputNumber,
@@ -97,6 +109,8 @@ export default [
   OptionGroup,
   // Form,
   // FormItem,
+  Tree,
+  DatePicker,
   Tree,
   // Progress,
   // Spinner,
