@@ -1,6 +1,8 @@
 <template>
   <section class="tag-demo">
-    <coding-box :code="code">
+    <coding-box
+      description="将center设置为true即可使标题和底部居中。center仅影响标题和底部区域。Dialog 的内容是任意的，在一些情况下，内容并不适合居中布局。如果需要内容也水平居中，请自行为其添加 CSS。"
+      :code="code">
       <w-button type="text" @click="dialogVisible = true">点击打开 Dialog</w-button>
 
       <w-dialog
