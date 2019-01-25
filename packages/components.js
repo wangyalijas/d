@@ -48,13 +48,12 @@ import TableColumn from './components/table-column'
 // import Form from './components/form'
 // import FormItem from './components/form-item'
 import Tabs from './components/tabs'
-import Loading from './components/loading'
 import Transfer from './components/transfer'
 import PatientList from './components/patient-list'
 import TabPane from './components/tab-pane'
 import Cascader from './components/cascader'
 import Tree from './components/tree'
-import DatePicker from './components/date-picker'
+// import DatePicker from './components/date-picker'
 // import Progress from './components/progress'
 // import Spinner from './components/spinner'
 import Scrollbar from './components/scrollbar'
@@ -96,7 +95,6 @@ export default [
   Dialog,
   Message,
   Transfer,
-  Loading,
   PatientList,
   // Autocomplete,
   // Dropdown,
@@ -112,8 +110,7 @@ export default [
   // Form,
   // FormItem,
   Tree,
-  DatePicker,
-  Tree,
+  // DatePicker,
   // Progress,
   // Spinner,
   Scrollbar

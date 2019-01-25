@@ -29,7 +29,7 @@ loadingDirective.install = Vue => {
               el.maskStyle[property] = el.getBoundingClientRect()[property] +
                 document.body[scroll] +
                 document.documentElement[scroll] -
-                parseInt(getStyle(document.body, `margin-${ property }`), 10) +
+                parseInt(getStyle(document.body, `margin-${property}`), 10) +
                 'px'
             });
             ['height', 'width'].forEach(property => {

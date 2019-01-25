@@ -4,7 +4,6 @@
 import './themes/fonts/iconfont'
 import components from './components'
 import methods from './methods'
-console.log(methods.Loading)
 const install = (Vue) => {
   if (install.installed) return
   components.forEach(component => Vue.component(component.name, component))
