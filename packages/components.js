@@ -24,6 +24,10 @@ import Message from './components/message'
 import Dropdown from './components/dropdown'
 import DropdownMenu from './components/dropdown-menu'
 import DropdownItem from './components/dropdown-item'
+import Menu from './components/menu'
+import Submenu from './components/submenu'
+import MenuItem from './components/menu-item'
+import MenuItemGroup from './components/menu-item-group'
 // import RadioGroup from './components/radio-group'
 // import RadioButton from './components/radio-button'
 // import Checkbox from './components/checkbox'
@@ -32,6 +36,8 @@ import DropdownItem from './components/dropdown-item'
 import Select from './components/select'
 import Option from './components/option'
 import OptionGroup from './components/option-group'
+import Table from './components/table'
+import TableColumn from './components/table-column'
 // import Form from './components/form'
 // import FormItem from './components/form-item'
 import Tabs from './components/tabs'
@@ -43,6 +49,8 @@ import Tree from './components/tree'
 // import Scrollbar from './components/scrollbar'
 
 export default [
+  Table,
+  TableColumn,
   Input,
   Cascader,
   Switch,
@@ -67,6 +75,10 @@ export default [
   Dropdown,
   DropdownItem,
   DropdownMenu,
+  Menu,
+  MenuItem,
+  MenuItemGroup,
+  Submenu,
   Tabs,
   TabPane,
   Pagination,
