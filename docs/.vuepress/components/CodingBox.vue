@@ -47,7 +47,6 @@ export default {
 @import "../stylesheet/index";
 .coding-box {
   position: relative;
-  z-index: 99;
   .coding-content {
     margin-top: 25px;
     font-size: 14px;
