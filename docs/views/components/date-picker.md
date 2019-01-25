@@ -1,1 +1,4 @@
-# Datepicker 日期选择框
+# DatePicker 日期选择器
+
+## 基础用法
+<m-date-picker />

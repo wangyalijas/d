@@ -62,16 +62,16 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import WCascaderMenu from './menu';
-import WInput from '../../input';
-import Popper from '../../../utils/vue-popper';
-import Clickoutside from '../../../utils/clickoutside';
-import emitter from '../../../mixins/emitter';
-import Locale from '../../../mixins/locale';
-import { t } from '../../../locale';
-import {debounce} from 'throttle-debounce';
-import { generateId, escapeRegexpString, isIE, isEdge } from '../../../utils/util';
+import Vue from 'vue'
+import WCascaderMenu from './menu'
+import WInput from '../../input'
+import Popper from '../../../utils/vue-popper'
+import Clickoutside from '../../../utils/clickoutside'
+import emitter from '../../../mixins/emitter'
+import Locale from '../../../mixins/locale'
+import { t } from '../../../locale'
+import {debounce} from 'throttle-debounce'
+import { generateId, escapeRegexpString, isIE, isEdge } from '../../../utils/util'
 
 const popperMixin = {
   props: {
@@ -88,7 +88,7 @@ const popperMixin = {
   methods: Popper.methods,
   data: Popper.data,
   beforeDestroy: Popper.beforeDestroy
-};
+}
 
 export default {
   name: 'WCascader',
@@ -98,10 +98,10 @@ export default {
   mixins: [popperMixin, emitter, Locale],
 
   inject: {
-    elForm: {
+    wForm: {
       default: ''
     },
-    elFormItem: {
+    wFormItem: {
       default: ''
     }
   },
@@ -117,19 +117,19 @@ export default {
     },
     props: {
       type: Object,
-      default() {
+      default () {
         return {
           children: 'children',
           label: 'label',
           value: 'value',
           disabled: 'disabled'
-        };
+        }
       }
     },
     value: {
       type: Array,
-      default() {
-        return [];
+      default () {
+        return []
       }
     },
     separator: {
@@ -138,8 +138,8 @@ export default {
     },
     placeholder: {
       type: String,
-      default() {
-        return t('w.cascader.placeholder');
+      default () {
+        return t('w.cascader.placeholder')
       }
     },
     disabled: Boolean,
@@ -165,7 +165,7 @@ export default {
     },
     beforeFilter: {
       type: Function,
-      default: () => (() => {})
+      default: () => () => {}
     },
     hoverThreshold: {
       type: Number,
@@ -173,11 +173,11 @@ export default {
     }
   },
 
-  data() {
+  data () {
     return {
       currentValue: this.value || [],
       menu: null,
-      debouncedInputChange() {},
+      debouncedInputChange () {},
       menuVisible: false,
       inputHover: false,
       inputValue: '',
@@ -185,162 +185,162 @@ export default {
       id: generateId(),
       needFocus: true,
       isOnComposition: false
-    };
+    }
   },
 
   computed: {
-    labelKey() {
-      return this.props.label || 'label';
+    labelKey () {
+      return this.props.label || 'label'
     },
-    valueKey() {
-      return this.props.value || 'value';
+    valueKey () {
+      return this.props.value || 'value'
     },
-    childrenKey() {
-      return this.props.children || 'children';
+    childrenKey () {
+      return this.props.children || 'children'
     },
-    disabledKey() {
-      return this.props.disabled || 'disabled';
+    disabledKey () {
+      return this.props.disabled || 'disabled'
     },
-    currentLabels() {
-      let options = this.options;
-      let labels = [];
+    currentLabels () {
+      let options = this.options
+      let labels = []
       this.currentValue.forEach(value => {
-        const targetOption = options && options.filter(option => option[this.valueKey] === value)[0];
+        const targetOption = options && options.filter(option => option[this.valueKey] === value)[0]
         if (targetOption) {
-          labels.push(targetOption[this.labelKey]);
-          options = targetOption[this.childrenKey];
+          labels.push(targetOption[this.labelKey])
+          options = targetOption[this.childrenKey]
         }
-      });
-      return labels;
+      })
+      return labels
     },
-    _elFormItemSize() {
-      return (this.elFormItem || {}).elFormItemSize;
+    _wFormItemSize () {
+      return (this.wFormItem || {}).wFormItemSize
     },
-    cascaderSize() {
-      return this.size || this._elFormItemSize || (this.$ELEMENT || {}).size;
+    cascaderSize () {
+      return this.size || this._wFormItemSize || (this.$ELEMENT || {}).size
     },
-    cascaderDisabled() {
-      return this.disabled || (this.elForm || {}).disabled;
+    cascaderDisabled () {
+      return this.disabled || (this.wForm || {}).disabled
     },
-    readonly() {
-      return !this.filterable || (!isIE() && !isEdge() && !this.menuVisible);
+    readonly () {
+      return !this.filterable || (!isIE() && !isEdge() && !this.menuVisible)
     }
   },
 
   watch: {
-    menuVisible(value) {
-      this.$refs.input.$refs.input.setAttribute('aria-expanded', value);
-      value ? this.showMenu() : this.hideMenu();
-      this.$emit('visible-change', value);
+    menuVisible (value) {
+      this.$refs.input.$refs.input.setAttribute('aria-expanded', value)
+      value ? this.showMenu() : this.hideMenu()
+      this.$emit('visible-change', value)
     },
-    value(value) {
-      this.currentValue = value;
+    value (value) {
+      this.currentValue = value
     },
-    currentValue(value) {
-      this.dispatch('WFormItem', 'w.form.change', [value]);
+    currentValue (value) {
+      this.dispatch('WFormItem', 'w.form.change', [value])
     },
-    currentLabels(value) {
-      const inputLabel = this.showAllLevels ? value.join('/') : value[value.length - 1] ;
-      this.$refs.input.$refs.input.setAttribute('value', inputLabel);
+    currentLabels (value) {
+      const inputLabel = this.showAllLevels ? value.join('/') : value[value.length - 1]
+      this.$refs.input.$refs.input.setAttribute('value', inputLabel)
     },
     options: {
       deep: true,
-      handler(value) {
+      handler (value) {
         if (!this.menu) {
-          this.initMenu();
+          this.initMenu()
         }
-        this.flatOptions = this.flattenOptions(this.options);
-        this.menu.options = value;
+        this.flatOptions = this.flattenOptions(this.options)
+        this.menu.options = value
       }
     }
   },
 
   methods: {
-    initMenu() {
-      this.menu = new Vue(WCascaderMenu).$mount();
-      this.menu.options = this.options;
-      this.menu.props = this.props;
-      this.menu.expandTrigger = this.expandTrigger;
-      this.menu.changeOnSelect = this.changeOnSelect;
-      this.menu.popperClass = this.popperClass;
-      this.menu.hoverThreshold = this.hoverThreshold;
-      this.popperElm = this.menu.$el;
-      this.menu.$refs.menus[0].setAttribute('id', `cascader-menu-${this.id}`);
-      this.menu.$on('pick', this.handlePick);
-      this.menu.$on('activeItemChange', this.handleActiveItemChange);
-      this.menu.$on('menuLeave', this.doDestroy);
-      this.menu.$on('closeInside', this.handleClickoutside);
+    initMenu () {
+      this.menu = new Vue(WCascaderMenu).$mount()
+      this.menu.options = this.options
+      this.menu.props = this.props
+      this.menu.expandTrigger = this.expandTrigger
+      this.menu.changeOnSelect = this.changeOnSelect
+      this.menu.popperClass = this.popperClass
+      this.menu.hoverThreshold = this.hoverThreshold
+      this.popperElm = this.menu.$el
+      this.menu.$refs.menus[0].setAttribute('id', `cascader-menu-${this.id}`)
+      this.menu.$on('pick', this.handlePick)
+      this.menu.$on('activeItemChange', this.handleActiveItemChange)
+      this.menu.$on('menuLeave', this.doDestroy)
+      this.menu.$on('closeInside', this.handleClickoutside)
     },
-    showMenu() {
+    showMenu () {
       if (!this.menu) {
-        this.initMenu();
+        this.initMenu()
       }
 
-      this.menu.value = this.currentValue.slice(0);
-      this.menu.visible = true;
-      this.menu.options = this.options;
+      this.menu.value = this.currentValue.slice(0)
+      this.menu.visible = true
+      this.menu.options = this.options
       this.$nextTick(_ => {
-        this.updatePopper();
-        this.menu.inputWidth = this.$refs.input.$el.offsetWidth - 2;
-      });
+        this.updatePopper()
+        this.menu.inputWidth = this.$refs.input.$el.offsetWidth - 2
+      })
     },
-    hideMenu() {
-      this.inputValue = '';
-      this.menu.visible = false;
+    hideMenu () {
+      this.inputValue = ''
+      this.menu.visible = false
       if (this.needFocus) {
-        this.$refs.input.focus();
+        this.$refs.input.focus()
       } else {
-        this.needFocus = true;
+        this.needFocus = true
       }
     },
-    handleActiveItemChange(value) {
+    handleActiveItemChange (value) {
       this.$nextTick(_ => {
-        this.updatePopper();
-      });
-      this.$emit('active-item-change', value);
+        this.updatePopper()
+      })
+      this.$emit('active-item-change', value)
     },
-    handleKeydown(e) {
-      const keyCode = e.keyCode;
+    handleKeydown (e) {
+      const keyCode = e.keyCode
       if (keyCode === 13) {
-        this.handleClick();
+        this.handleClick()
       } else if (keyCode === 40) { // down
-        this.menuVisible = true; // 打开
+        this.menuVisible = true // 打开
         setTimeout(() => {
-          const firstMenu = this.popperElm.querySelectorAll('.w-cascader-menu')[0];
-          firstMenu.querySelectorAll("[tabindex='-1']")[0].focus();
-        });
-        e.stopPropagation();
-        e.preventDefault();
+          const firstMenu = this.popperElm.querySelectorAll('.w-cascader-menu')[0]
+          firstMenu.querySelectorAll("[tabindex='-1']")[0].focus()
+        })
+        e.stopPropagation()
+        e.preventDefault()
       } else if (keyCode === 27 || keyCode === 9) { // esc  tab
-        this.inputValue = '';
-        if (this.menu) this.menu.visible = false;
+        this.inputValue = ''
+        if (this.menu) this.menu.visible = false
       }
     },
-    handlePick(value, close = true) {
-      this.currentValue = value;
-      this.$emit('input', value);
-      this.$emit('change', value);
+    handlePick (value, close = true) {
+      this.currentValue = value
+      this.$emit('input', value)
+      this.$emit('change', value)
 
       if (close) {
-        this.menuVisible = false;
+        this.menuVisible = false
       } else {
-        this.$nextTick(this.updatePopper);
+        this.$nextTick(this.updatePopper)
       }
     },
-    handleInputChange(value) {
-      if (!this.menuVisible) return;
-      const flatOptions = this.flatOptions;
+    handleInputChange (value) {
+      if (!this.menuVisible) return
+      const flatOptions = this.flatOptions
 
       if (!value) {
-        this.menu.options = this.options;
-        this.$nextTick(this.updatePopper);
-        return;
+        this.menu.options = this.options
+        this.$nextTick(this.updatePopper)
+        return
       }
 
       let filteredFlatOptions = flatOptions.filter(optionsStack => {
         return optionsStack.some(option => new RegExp(escapeRegexpString(value), 'i')
-          .test(option[this.labelKey]));
-      });
+          .test(option[this.labelKey]))
+      })
 
       if (filteredFlatOptions.length > 0) {
         filteredFlatOptions = filteredFlatOptions.map(optionStack => {
@@ -349,84 +349,84 @@ export default {
             value: optionStack.map(item => item[this.valueKey]),
             label: this.renderFilteredOptionLabel(value, optionStack),
             disabled: optionStack.some(item => item[this.disabledKey])
-          };
-        });
+          }
+        })
       } else {
         filteredFlatOptions = [{
           __IS__FLAT__OPTIONS: true,
           label: this.t('w.cascader.noMatch'),
           value: '',
           disabled: true
-        }];
+        }]
       }
-      this.menu.options = filteredFlatOptions;
-      this.$nextTick(this.updatePopper);
+      this.menu.options = filteredFlatOptions
+      this.$nextTick(this.updatePopper)
     },
-    renderFilteredOptionLabel(inputValue, optionsStack) {
+    renderFilteredOptionLabel (inputValue, optionsStack) {
       return optionsStack.map((option, index) => {
-        const label = option[this.labelKey];
-        const keywordIndex = label.toLowerCase().indexOf(inputValue.toLowerCase());
-        const labelPart = label.slice(keywordIndex, inputValue.length + keywordIndex);
-        const node = keywordIndex > -1 ? this.highlightKeyword(label, labelPart) : label;
-        return index === 0 ? node : [` ${this.separator} `, node];
-      });
+        const label = option[this.labelKey]
+        const keywordIndex = label.toLowerCase().indexOf(inputValue.toLowerCase())
+        const labelPart = label.slice(keywordIndex, inputValue.length + keywordIndex)
+        const node = keywordIndex > -1 ? this.highlightKeyword(label, labelPart) : label
+        return index === 0 ? node : [` ${this.separator} `, node]
+      })
     },
-    highlightKeyword(label, keyword) {
-      const h = this._c;
+    highlightKeyword (label, keyword) {
+      const h = this._c
       return label.split(keyword)
         .map((node, index) => index === 0 ? node : [
           h('span', { class: { 'w-cascader-menu__item__keyword': true }}, [this._v(keyword)]),
           node
-        ]);
+        ])
     },
-    flattenOptions(options, ancestor = []) {
-      let flatOptions = [];
+    flattenOptions (options, ancestor = []) {
+      let flatOptions = []
       options.forEach((option) => {
-        const optionsStack = ancestor.concat(option);
+        const optionsStack = ancestor.concat(option)
         if (!option[this.childrenKey]) {
-          flatOptions.push(optionsStack);
+          flatOptions.push(optionsStack)
         } else {
           if (this.changeOnSelect) {
-            flatOptions.push(optionsStack);
+            flatOptions.push(optionsStack)
           }
-          flatOptions = flatOptions.concat(this.flattenOptions(option[this.childrenKey], optionsStack));
+          flatOptions = flatOptions.concat(this.flattenOptions(option[this.childrenKey], optionsStack))
         }
-      });
-      return flatOptions;
+      })
+      return flatOptions
     },
-    clearValue(ev) {
-      ev.stopPropagation();
-      this.handlePick([], true);
+    clearValue (ev) {
+      ev.stopPropagation()
+      this.handlePick([], true)
     },
-    handleClickoutside(pickFinished = false) {
+    handleClickoutside (pickFinished = false) {
       if (this.menuVisible && !pickFinished) {
-        this.needFocus = false;
+        this.needFocus = false
       }
-      this.menuVisible = false;
+      this.menuVisible = false
     },
-    handleClick() {
-      if (this.cascaderDisabled) return;
-      this.$refs.input.focus();
+    handleClick () {
+      if (this.cascaderDisabled) return
+      this.$refs.input.focus()
       if (this.filterable) {
-        this.menuVisible = true;
-        return;
+        this.menuVisible = true
+        return
       }
-      this.menuVisible = !this.menuVisible;
+      this.menuVisible = !this.menuVisible
     },
-    handleFocus(event) {
-      this.$emit('focus', event);
+    handleFocus (event) {
+      this.$emit('focus', event)
     },
-    handleBlur(event) {
-      this.$emit('blur', event);
+    handleBlur (event) {
+      this.$emit('blur', event)
     },
-    handleComposition(event) {
-      this.isOnComposition = event.type !== 'compositionend';
+    handleComposition (event) {
+      this.isOnComposition = event.type !== 'compositionend'
     }
   },
 
-  created() {
+  created () {
     this.debouncedInputChange = debounce(this.debounce, value => {
-      const before = this.beforeFilter(value);
+      const before = this.beforeFilter(value)
 
       if (before && before.then) {
         this.menu.options = [{
@@ -434,23 +434,23 @@ export default {
           label: this.t('w.cascader.loading'),
           value: '',
           disabled: true
-        }];
+        }]
         before
           .then(() => {
             this.$nextTick(() => {
-              this.handleInputChange(value);
-            });
-          });
+              this.handleInputChange(value)
+            })
+          })
       } else if (before !== false) {
         this.$nextTick(() => {
-          this.handleInputChange(value);
-        });
+          this.handleInputChange(value)
+        })
       }
-    });
+    })
   },
 
-  mounted() {
-    this.flatOptions = this.flattenOptions(this.options);
+  mounted () {
+    this.flatOptions = this.flattenOptions(this.options)
   }
-};
+}
 </script>
