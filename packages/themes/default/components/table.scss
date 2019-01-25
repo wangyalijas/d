@@ -126,8 +126,7 @@
 
     &.gutter {
       width: 15px;
-      border-right-width: 0;
-      border-bottom-width: 0;
+      border-width: 0;
       padding: 0;
     }
 
@@ -168,6 +167,9 @@
 
   th.is-leaf, td {
     border-bottom: $--table-border;
+    border-top: none;
+    border-left: none;
+    border-right: none;
   }
 
   th.is-sortable {
@@ -283,6 +285,7 @@
     }
 
     th, td {
+      border-left: none;
       border-right: $--table-border;
 
       &:first-child .cell {
