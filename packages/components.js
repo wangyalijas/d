@@ -49,6 +49,7 @@ import TableColumn from './components/table-column'
 // import FormItem from './components/form-item'
 import Tabs from './components/tabs'
 import Transfer from './components/transfer'
+import PatientList from './components/patient-list'
 import TabPane from './components/tab-pane'
 import Cascader from './components/cascader'
 import Tree from './components/tree'
@@ -94,6 +95,7 @@ export default [
   Dialog,
   Message,
   Transfer,
+  PatientList,
   // Autocomplete,
   // Dropdown,
   // InputNumber,
