@@ -1,14 +1,14 @@
 @import "../mixins/mixins";
-@import "../mixins/utils";
 @import "../core/variable";
+@import "../mixins/utils";
 
 @include b(form) {
-  @include m(labw-left) {
-    & .w-form-item__label {
+  @include m(label-left) {
+    & .el-form-item__label {
       text-align: left;
     }
   }
-  @include m(labw-top) {
+  @include m(label-top) {
     & .w-form-item__label {
       float: none;
       display: inline-block;
@@ -30,7 +30,7 @@
       display: inline-block;
       vertical-align: top;
     }
-    &.w-form--labw-top .w-form-item__content {
+    &.w-form--label-top .w-form-item__content {
       display: block;
     }
   }
