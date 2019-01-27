@@ -1,23 +1,25 @@
 <template>
-  <section class="radio-demo">
-    <div class="block">
-      <span class="demonstration">默认</span>
-      <w-date-picker
-        v-model="value1"
-        type="date"
-        placeholder="选择日期">
-      </w-date-picker>
-    </div>
-    <div class="block">
-      <span class="demonstration">带快捷选项</span>
-      <w-date-picker
-        v-model="value2"
-        align="right"
-        type="date"
-        placeholder="选择日期"
-        :picker-options="pickerOptions1">
-      </w-date-picker>
-    </div>
+  <section class="datepicker-demo">
+    <coding-box :code="code">
+      <div class="block">
+        <span class="demonstration">默认</span>
+        <w-date-picker
+          v-model="value1"
+          type="date"
+          placeholder="选择日期">
+        </w-date-picker>
+      </div>
+      <div class="block">
+        <span class="demonstration">带快捷选项</span>
+        <w-date-picker
+          v-model="value2"
+          align="right"
+          type="date"
+          placeholder="选择日期"
+          :picker-options="pickerOptions1">
+        </w-date-picker>
+      </div>
+    </coding-box>
   </section>
 </template>
 
@@ -74,10 +76,39 @@ export default {
     }
 }
 </script>
+
+
 <style lang="scss">
-.radio-demo {
-  .w-radio+.w-radio {
-    margin-left: 5px;
+  table {
+    display: table;
   }
-}
+
+  tr:nth-child(2n) {
+    background-color: white !important;
+  }
+</style>
+<style lang="scss">
+  .datepicker-demo {
+    tr:nth-child(2n) {
+      background-color: white !important;
+    }
+    .block {
+      padding: 30px 0;
+      text-align: center;
+      border-right: 1px solid #eff2f6;
+      display: inline-block;
+      width: 50%;
+      box-sizing: border-box;
+      float: left;
+      &:last-child {
+        border: none;
+      }
+    }
+    .demonstration {
+      display: block;
+      color: #8492a6;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+  }
 </style>

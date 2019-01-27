@@ -32,8 +32,6 @@ import DropdownItem from './components/dropdown-item'
 import Select from './components/select/index.js'
 import Option from './components/option/index.js'
 import OptionGroup from './components/option-group/index.js'
-// import Form from './components/form/index.js'
-// import FormItem from './components/form-item/index.js'
 import Menu from './components/menu'
 import Submenu from './components/submenu'
 import MenuItem from './components/menu-item'
@@ -45,8 +43,8 @@ import MenuItemGroup from './components/menu-item-group'
 // import CheckboxGroup from './components/checkbox-group'
 import Table from './components/table'
 import TableColumn from './components/table-column'
-// import Form from './components/form'
-// import FormItem from './components/form-item'
+import Form from './components/form'
+import FormItem from './components/form-item'
 import Tabs from './components/tabs'
 import Transfer from './components/transfer'
 import PatientList from './components/patient-list'
@@ -54,6 +52,8 @@ import TabPane from './components/tab-pane'
 import Cascader from './components/cascader'
 import Tree from './components/tree'
 import DatePicker from './components/date-picker'
+import TimePicker from './components/time-picker'
+import TimeSelect from './components/time-select'
 // import Progress from './components/progress'
 // import Spinner from './components/spinner'
 import Scrollbar from './components/scrollbar'
@@ -107,10 +107,12 @@ export default [
   Select,
   Option,
   OptionGroup,
-  // Form,
-  // FormItem,
+  Form,
+  FormItem,
   Tree,
   DatePicker,
+  TimePicker,
+  TimeSelect,
   // Progress,
   // Spinner,
   Scrollbar

@@ -2,4 +2,4 @@
 
 ## 典型表单
 
-</m-form-default>
+<m-form-default />
