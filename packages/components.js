@@ -53,7 +53,7 @@ import PatientList from './components/patient-list'
 import TabPane from './components/tab-pane'
 import Cascader from './components/cascader'
 import Tree from './components/tree'
-// import DatePicker from './components/date-picker'
+import DatePicker from './components/date-picker'
 // import Progress from './components/progress'
 // import Spinner from './components/spinner'
 import Scrollbar from './components/scrollbar'
@@ -110,7 +110,7 @@ export default [
   // Form,
   // FormItem,
   Tree,
-  // DatePicker,
+  DatePicker,
   // Progress,
   // Spinner,
   Scrollbar

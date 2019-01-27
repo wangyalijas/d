@@ -328,4 +328,4 @@ fecha.parse = function (dateStr, format, i18nSettings) {
   return date;
 };
 
-
+export default fecha
