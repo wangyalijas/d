@@ -87,7 +87,7 @@ export default {
     background-color: white !important;
   }
 </style>
-<style lang="scss">
+<style lang="scss" scoped>
   .datepicker-demo {
     tr:nth-child(2n) {
       background-color: white !important;
